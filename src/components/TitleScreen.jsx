@@ -2,7 +2,12 @@ import React from 'react'
 
 const TitleScreen = () => {
   return (
-    <div>TitleScreen</div>
+    <div>
+      <h1>
+        <h1>Title Screen</h1>
+      </h1>
+
+    </div>
   )
 }
 

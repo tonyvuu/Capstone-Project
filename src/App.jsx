@@ -1,48 +1,53 @@
-import React, { useState } from "react";
-import './App.css'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Stack from 'react-bootstrap/Stack';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-
+import NavBarTabs from './components/NavBarTabs';
+import Characters from './components/Characters';
+import Locations from './components/Locations';
+import Newspaper from './components/Newspaper';
+import PoliceReport from './components/PoliceReport';
+import Rules from './components/Rules';
+import Leaderboard from './components/Leaderboard';
+import Login from './components/Login';
+import Registration from './components/Registration';
+import TitleScreen from './components/TitleScreen';
+import Step1 from './components/Step1';
 
 function App() {
-
   return (
     <div>
-      
       <Stack direction="horizontal" gap={3}>
-      <div className="p-2"><h1>DevTown Murder Mystery</h1></div>
-      <div className="p-2 ms-auto">LeaderBoard</div>
-      <div className="p-2">Register</div>
-      <div className="p-2">Login</div>
-    </Stack>
+        <div className="p-2">
+          <h1>DevTown Murder Mystery</h1>
+        </div>
+        <Leaderboard />
+        <Login />
+        <Registration />
+      </Stack>
 
-    <Stack direction="horizontal" gap={3}>
-      <div className="p-2">
-      <Nav justify variant="tabs" defaultActiveKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/home">Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Characters</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Newspaper</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-3">Police Report</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-4">Locations</Nav.Link>
-      </Nav.Item>
-    </Nav>
+      <Stack direction="horizontal" gap={3}>
+        <div className="p-2"></div>
+      </Stack>
+
+      <NavBarTabs />
+
+      <Routes>
+        <Route path="/" element={<Characters />} />
+        <Route path="/characters" element={<Characters />} />
+        <Route path="/locations" element={<Locations />} />
+        <Route path="/newspaper" element={<Newspaper />} />
+        <Route path="/police-report" element={<PoliceReport />} />
+        <Route path="/rules" element={<Rules />} />
+      </Routes>
+
+      <div>
+        <TitleScreen />
       </div>
-    </Stack>
-    
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
