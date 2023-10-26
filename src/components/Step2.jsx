@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Step2 from './Step2';
+import Step3 from './Step3';
 import '../styles/Step1.css';
 import { TypeAnimation } from 'react-type-animation';
 
-const Step1 = () => {
+const Step2 = () => {
   const [inputValue, setInputValue] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
@@ -26,14 +26,14 @@ const Step1 = () => {
       <div className="story-text">
         <TypeAnimation
           sequence={[
-            "Morrow, GA - At 4:23 this morning, a man broke into a remote beach house where 26 year-old twin Toni and MaKenna Doe were asleep. The unidentified man murdered MaKenna and abducted Toni before first responders could arrive. Police departments across two states are hunting for MaKenna's killer and her sister Toni, but neither has been found. Homicide detective, Manti Fettuccine, made a breakthrough in the case but then mysteriously disappeared. He left his detective's notebook behind but authorities aren't sure what to make of it. The killer is on the loose. \nCASE FACTS: VICTIM: Makenna Doe\nCASE NUMBER: G-668H\nLOCATION: DevTown, GA"
+            "Manti was very close to solving the case. There was a footage of him leaving his house outside where he scream,” I THINK I SOLVED THE CASE!” he immediately ran to his car and drove away. However, he went missing the next following day. Santiago left his notebook behind on the investigation. It is up to you to look for clues and details in his notebook that will help guide towards to solving the mystery"
           ]}
           speed={95}
           style={{ fontSize: '1.5em',whiteSpace: 'pre-line' }}
         />
       </div>
 
-      <h3>Which twin is deceased?</h3>
+      <h3>Where is Manti's notebook?</h3>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicText">
           <Form.Control
@@ -51,9 +51,9 @@ const Step1 = () => {
           Submit
         </Button>
       </Form>
-      {isCorrect && <Step2 />}
+      {isCorrect && <Step3 />}
     </div>
   );
 };
 
-export default Step1;
+export default Step2;

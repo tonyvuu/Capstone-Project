@@ -13,14 +13,14 @@ import Leaderboard from './components/Leaderboard';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import TitleScreen from './components/TitleScreen';
-import Step1 from './components/Step1';
+import CompletionBar from './components/CompletionBar';
 
 function App() {
   return (
     <div>
       <Stack direction="horizontal" gap={3}>
         <div className="p-2">
-          <h1 className='header'>DevTown Murder Mystery</h1>
+          <h1>DevTown Murder Mystery</h1>
         </div>
         <Leaderboard />
         <Login />
@@ -44,6 +44,7 @@ function App() {
 
       <div>
         <TitleScreen />
+        {/* <CompletionBar /> */}
       </div>
     </div>
   );
