@@ -13,7 +13,7 @@ import Leaderboard from './components/Leaderboard';
 import Login from './components/Login';
 import Registration from './components/Registration';
 import TitleScreen from './components/TitleScreen';
-import Step1 from './components/Step1';
+import CompletionBar from './components/CompletionBar';
 
 function App() {
   return (
@@ -44,6 +44,7 @@ function App() {
 
       <div>
         <TitleScreen />
+        {/* <CompletionBar /> */}
       </div>
     </div>
   );
