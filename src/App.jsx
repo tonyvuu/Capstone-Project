@@ -20,7 +20,7 @@ function App() {
     <div>
       <Stack direction="horizontal" gap={3}>
         <div className="p-2">
-          <h1>DevTown Murder Mystery</h1>
+          <h1 className='header'>DevTown Murder Mystery</h1>
         </div>
         <Leaderboard />
         <Login />
