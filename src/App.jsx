@@ -42,9 +42,6 @@ function App() {
               </Nav.Link>
             </Nav>
         </Navbar>
-      <div className="title-text">
-            <h1>DevTown Murder Mystery</h1>
-          </div>
         <Stack direction="horizontal" gap={3}>
           {/* <Leaderboard /> */}
           {/* <Login /> */}

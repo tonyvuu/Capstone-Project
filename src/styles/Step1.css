@@ -1,4 +1,12 @@
 .story-text {
     text-align: left
   }
-  
+   /* Step1.css */
+.custom-input {
+  background-color: black; /* Set the input background to black */
+  color: white; /* Set the input text color to white */
+}
+
+.custom-input::placeholder {
+  color: white; /* Set the placeholder text color to white */
+}

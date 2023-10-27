@@ -14,10 +14,10 @@ const Step1 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.toLowerCase() === "mckenna") {
+    if (inputValue.toLowerCase() === "makenna") {
       setIsCorrect(true);
       setShowErrorMessage(false);
-      updateProgress(10); 
+      updateProgress(10);
     } else {
       setIsCorrect(false);
       setShowErrorMessage(true);
@@ -29,7 +29,7 @@ const Step1 = () => {
       <div className="story-text">
         <TypeAnimation
           sequence={[
-            "Morrow, GA - At 4:23 this morning, a man broke into a remote beach house where 26 year-old twin Toni and MaKenna Doe were asleep. The unidentified man murdered MaKenna and abducted Toni before first responders could arrive. Police departments across two states are hunting for MaKenna's killer and her sister Toni, but neither has been found. Homicide detective, Manti Fettuccine, made a breakthrough in the case but then mysteriously disappeared. He left his detective's notebook behind but authorities aren't sure what to make of it. The killer is on the loose. \nCASE FACTS: VICTIM: Makenna Doe\nCASE NUMBER: G-668H\nLOCATION: DevTown, GA",
+            "In Morrow, Georgia, at 4:23 AM this morning, an unidentified man forcibly entered a remote beach house where 26-year-old twins, Toni and MaKenna Doe, were asleep. Tragically, MaKenna was killed by the intruder, and Toni was kidnapped before first responders could arrive. Police departments from two states are actively searching for both the murderer of MaKenna and her missing sister Toni, but neither has been located yet. The case took a perplexing turn when Homicide Detective Manti Fettuccine, who had made a significant breakthrough, mysteriously disappeared. He left behind his detective's notebook, which authorities are trying to decipher. The killer is still on the loose. \n\nCASE NUMBER: K-868A \nLOCATION: DevTown, GA",
           ]}
           speed={95}
           style={{ fontSize: "1.5em", whiteSpace: "pre-line" }}
@@ -46,6 +46,7 @@ const Step1 = () => {
               setInputValue(e.target.value);
               setShowErrorMessage(false);
             }}
+            className="custom-input" /* Add custom-input class for styling */
           />
           {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
         </Form.Group>
