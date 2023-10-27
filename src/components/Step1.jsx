@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { InputGroup, FormControl } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Step2 from "./Step2";
@@ -35,25 +36,27 @@ const Step1 = () => {
           style={{ fontSize: "1.5em", whiteSpace: "pre-line" }}
         />
       </div>
-
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicText">
-          <Form.Control
-            type="text"
-            placeholder="Which twin is deceased?"
-            value={inputValue}
-            onChange={(e) => {
-              setInputValue(e.target.value);
-              setShowErrorMessage(false);
-            }}
-            className="custom-input" /* Add custom-input class for styling */
-          />
+      <br/>
+      <div className="story-input">
+        <Form onSubmit={handleSubmit}>
+          <InputGroup className="mb-3 custom-input-group">
+            <FormControl
+              className="custom-input"
+              type="text"
+              placeholder="Which twin is deceased?"
+              value={inputValue}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                setShowErrorMessage(false);
+              }}
+            />
+            <Button className="custom-button" type="submit">
+              Submit
+            </Button>
+          </InputGroup>
           {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+        </Form>
+      </div>
       {isCorrect && <Step2 />}
     </div>
   );

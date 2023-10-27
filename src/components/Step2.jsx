@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import { InputGroup, FormControl } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Step3 from './Step3';
@@ -35,12 +36,13 @@ const Step2 = () => {
           style={{ fontSize: '1.5em',whiteSpace: 'pre-line' }}
         />
       </div>
-
+      <br/>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicText">
+      <InputGroup className="mb-3 custom-input-group">
           <Form.Control
+            className="custom-input" 
             type="text"
-            placeholder="Please look around for clues and discover how many key evidence you found"
+            placeholder="Look around for clues and discover how many key evidence you found"
             value={inputValue}
             onChange={(e) => {
               setInputValue(e.target.value);
@@ -48,10 +50,10 @@ const Step2 = () => {
             }}
           />
           {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-        </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button className='custom-button' type="submit">
           Submit
         </Button>
+        </InputGroup>
       </Form>
       {isCorrect && <Step3 />}
     </div>

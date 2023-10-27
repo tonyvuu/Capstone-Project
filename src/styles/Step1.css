@@ -1,12 +1,32 @@
 .story-text {
     text-align: left
   }
-   /* Step1.css */
 .custom-input {
-  background-color: black; /* Set the input background to black */
+  background-color: rgb(45, 44, 44); /* Set the input background to black */
   color: white; /* Set the input text color to white */
 }
 
 .custom-input::placeholder {
-  color: white; /* Set the placeholder text color to white */
+  color: white; 
+}
+
+.custom-input:focus {
+  background-color: black; 
+  color: white;
+  outline: none; 
+}
+
+.custom-input-group {
+  width: 650px; 
+  margin-left: auto;
+}
+
+.custom-button {
+  background-color: #ff6a00; /* Choose your desired color by specifying the hexadecimal or RGB value */
+  color: white; /* Text color for contrast */
+  border: none; /* Remove the button border if needed */
+}
+
+.custom-button:hover {
+  background-color: red; 
 }

@@ -16,7 +16,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import CompletionBar from "./components/CompletionBar";
-import detective from '../src/detective.png'
+import detective from './assets/detective.png'
 
 export const CompletionBarContext = createContext();
 
@@ -62,7 +62,7 @@ function App() {
 
         <img className="detective" src = {detective}></img>
 
-        {/* <NavBarTabs /> */}
+        <NavBarTabs />
 
         <Routes>
           <Route path="/" element={<Characters />} />
