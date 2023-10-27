@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Step3 from './Step3';
 import '../styles/Step1.css';
 import { TypeAnimation } from 'react-type-animation';
+import { CompletionBarContext } from '../App';
 
 const Step2 = () => {
   const [inputValue, setInputValue] = useState('');
   const [isCorrect, setIsCorrect] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const { updateProgress } = useContext(CompletionBarContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (inputValue.toLowerCase() === 'mckenna') {
       setIsCorrect(true);
       setShowErrorMessage(false);
+      updateProgress(10); 
     } else {
       setIsCorrect(false);
       setShowErrorMessage(true);
