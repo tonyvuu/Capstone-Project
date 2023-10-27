@@ -30,7 +30,7 @@ function App() {
       <div>
         <div className="header-nav">
           <Navbar variant="dark">
-            <Navbar.Brand className="navbar-title-icon" as={Link} to="/">
+            <Navbar.Brand className="navbar-title-icon" style={{fontFamily: "Roboto Slab"}} as={Link} to="/">
               DevTown Murder Mystery{" "}
               <img
                 className="image-title"

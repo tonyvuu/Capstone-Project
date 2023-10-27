@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { InputGroup } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Step4 from './Step4';
@@ -34,8 +35,9 @@ const Step3 = () => {
       </div>
       <br/>
       <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicText">
+      <InputGroup className="mb-3 custom-input-group">
           <Form.Control
+            className="custom-input" 
             type="text"
             placeholder="Look for clues and identify whose hospital ID it belongs to"
             value={inputValue}
@@ -45,10 +47,10 @@ const Step3 = () => {
             }}
           />
           {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-        </Form.Group>
-        <Button variant="primary" type="submit">
+          <Button className='custom-button' type="submit">
           Submit
         </Button>
+        </InputGroup>
       </Form>
       {isCorrect && <Step4 />}
     </div>

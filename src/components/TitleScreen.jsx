@@ -3,8 +3,8 @@ import Button from "react-bootstrap/Button";
 import Step1 from "../components/Step1";
 import { CompletionBarContext } from "../App";
 import "../styles/TitleScreen.css";
-import detective from "../detective.png";
 import NavBarTabs from "./NavBarTabs"
+import detective from '../assets/detective.png'
 
 const TitleScreen = () => {
   const [showStep1, setShowStep1] = useState(false);
