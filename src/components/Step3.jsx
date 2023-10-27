@@ -12,7 +12,7 @@ const Step3 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.toLowerCase() === 'Zach Bash') {
+    if (inputValue.toLowerCase() === 'zach bash') {
       setIsCorrect(true);
       setShowErrorMessage(false);
     } else {
