@@ -15,6 +15,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import CompletionBar from "./components/CompletionBar";
+import Nav from 'react-bootstrap/Nav';
 
 export const CompletionBarContext = createContext();
 
@@ -28,6 +29,8 @@ function App() {
   return (
     <CompletionBarContext.Provider value={{ progress, updateProgress }}>
       <div>
+        
+
         <Stack direction="horizontal" gap={3}>
           <div className="p-2">
             <h1>DevTown Murder Mystery</h1>
