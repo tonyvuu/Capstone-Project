@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Step1 from '../components/Step1';
+import { CompletionBarContext } from '../App';
 
 const TitleScreen = () => {
   const [showStep1, setShowStep1] = useState(false);
+  const { updateProgress } = useContext(CompletionBarContext);
 
   return (
     <div>
