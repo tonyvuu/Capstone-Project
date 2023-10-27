@@ -10,13 +10,27 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       user_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "user_id",
+        },
+        allowNull: false,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       score: {
         type: Sequelize.INTEGER
       },
       username: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        references: {
+          model: "Users",
+          key: "username",
+        },
+        allowNull: false,
+        onUpdate: "CASCADE",
+        onDelete: "CASCADE"
       },
       createdAt: {
         allowNull: false,

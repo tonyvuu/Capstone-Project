@@ -19,7 +19,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       person_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {
+          model: "People",
+          key: "person_id",
+        },
+        allowNull: false
       },
       date: {
         type: Sequelize.STRING
