@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: black;
+  color: white;
 }
 
 .logo {
@@ -39,4 +41,28 @@
 
 .read-the-docs {
   color: #888;
+}
+
+body{
+  background-color: red;
+}
+
+.image-title{
+  height: 100px;
+  width: auto;
+}
+
+.signup-text{
+  text-align: right;
+  color: red;
+}
+
+
+.registration-login {
+  float: right;
+}
+
+.navbar {
+  display: flex;
+  width: 100vw;
 }
