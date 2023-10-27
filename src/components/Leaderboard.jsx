@@ -8,10 +8,9 @@ const Leaderboard = () => {
         <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Attempts</th>
+          <th>Rank</th>
           <th>Username</th>
+          <th>Attempts</th>
         </tr>
       </thead>
       <tbody>
@@ -19,13 +18,11 @@ const Leaderboard = () => {
           <td>1</td>
           <td>Santi</td>
           <td>40</td>
-          <td>blah</td>
         </tr>
         <tr>
           <td>2</td>
           <td>Tony</td>
           <td>50</td>
-          <td>blah</td>
         </tr>
       </tbody>
     </Table>
