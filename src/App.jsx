@@ -1,8 +1,9 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import React, { useState, createContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
 import NavBarTabs from "./components/NavBarTabs";
 import Characters from "./components/Characters";
@@ -15,6 +16,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import CompletionBar from "./components/CompletionBar";
+import detective from '../src/detective.png'
 
 export const CompletionBarContext = createContext();
 
@@ -28,19 +30,44 @@ function App() {
   return (
     <CompletionBarContext.Provider value={{ progress, updateProgress }}>
       <div>
+        <div className="header-nav">
+          <Navbar variant="dark">
+            <Navbar.Brand className="navbar-title-icon" as={Link} to="/">
+              DevTown Murder Mystery{" "}
+              <img
+                className="image-title"
+                src="https://www.mailordermystery.com/cdn/shop/products/SPIES-Product-Image_1024x.gif?v=1586973228"
+                alt="Spotify Logo"
+              />
+            </Navbar.Brand>
+            <Nav className="registration-login right-align">
+              <Nav.Link as={Link} to="/registration">
+                Sign up
+              </Nav.Link>
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+            </Nav>
+          </Navbar>
+        </div>
+
+        
+
+        <div className="title-text"></div>
         <Stack direction="horizontal" gap={3}>
-          <div className="p-2">
-            <h1>DevTown Murder Mystery</h1>
-          </div>
-          <Leaderboard />
+          {/* <Leaderboard />
           <Login />
-          <Registration />
+          <Registration /> */}
         </Stack>
 
-        <NavBarTabs />
+        <img className="detective" src = {detective}></img>
+
+        {/* <NavBarTabs /> */}
 
         <Routes>
           <Route path="/" element={<Characters />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/registration" element={<Registration />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/newspaper" element={<Newspaper />} />
@@ -48,9 +75,9 @@ function App() {
           <Route path="/rules" element={<Rules />} />
         </Routes>
 
-        <div>
+        <div className="content">
           <TitleScreen />
-          <CompletionBar />
+          {/* <CompletionBar /> */}
         </div>
       </div>
     </CompletionBarContext.Provider>
