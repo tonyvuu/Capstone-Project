@@ -3,17 +3,23 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Scores', {
-      score_id: {
+      id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
+        type: Sequelize.INTEGER
+      },
+      score_id: {
+        allowNull: false,
+        autoIncrement: true,
         type: Sequelize.INTEGER
       },
       user_id: {
         type: Sequelize.INTEGER,
         references: {
           model: "Users",
-          key: "user_id",
+          key: "id",
+          as: "user_id"
         },
         allowNull: false,
         onUpdate: "CASCADE",
@@ -26,7 +32,7 @@ module.exports = {
         type: Sequelize.STRING,
         references: {
           model: "Users",
-          key: "username",
+          key: "username"
         },
         allowNull: false,
         onUpdate: "CASCADE",
