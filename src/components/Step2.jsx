@@ -14,7 +14,7 @@ const Step2 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.toLowerCase() === 'mckenna') {
+    if (inputValue.toLowerCase() === 'makenna') {
       setIsCorrect(true);
       setShowErrorMessage(false);
       updateProgress(10); 
