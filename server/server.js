@@ -5,6 +5,7 @@ const sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
+app.use(express.json());
 
 const {
   Alibis,
@@ -23,14 +24,20 @@ app.get("/testGet", async (req, res) => {
   res.send("Hola");
 });
 
-app.get("/Users", async (req, res) => {
+app.get("/users", async (req, res) => {
   console.log("hi");
   const userData = await Users.findAll();
+  console.log(userData)
   res.json(userData);
 });
 
 app.post("/register", async (req, res) => {
-  const { firstName, lastName, username, email, password } = req.body;
+    if(req.body === undefined) {
+        console.log("Body not received")
+    }
+    
+    console.log("Body: ", req.body)
+   const { firstName, lastName, username, email, password } = req.body;
   const existingUser = await Users.findOne({ where: { email: email } });
 
   if (existingUser) {
