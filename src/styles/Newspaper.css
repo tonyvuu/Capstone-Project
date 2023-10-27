@@ -1,0 +1,12 @@
+.newspaper {
+    display: flex;
+    background-color: beige;
+}
+
+.container {
+    background-color: beige;
+}
+
+.header {
+    color: blue;
+}
