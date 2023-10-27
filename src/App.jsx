@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import React, { useState, createContext } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import Stack from "react-bootstrap/Stack";
-import NavBarTabs from "./components/NavBarTabs";
+
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
 import Newspaper from "./components/Newspaper";
@@ -16,7 +16,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import CompletionBar from "./components/CompletionBar";
-import detective from '../src/detective.png'
+
 
 export const CompletionBarContext = createContext();
 
@@ -55,17 +55,15 @@ function App() {
 
         <div className="title-text"></div>
         <Stack direction="horizontal" gap={3}>
-          {/* <Leaderboard />
-          <Login />
-          <Registration /> */}
+          <Leaderboard />
         </Stack>
 
-        <img className="detective" src = {detective}></img>
+        
 
-        {/* <NavBarTabs /> */}
+        
 
         <Routes>
-          <Route path="/" element={<Characters />} />
+          <Route path="/" element={<TitleScreen />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/characters" element={<Characters />} />
@@ -76,7 +74,7 @@ function App() {
         </Routes>
 
         <div className="content">
-          <TitleScreen />
+          {/* <TitleScreen /> */}
           {/* <CompletionBar /> */}
         </div>
       </div>
