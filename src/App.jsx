@@ -17,7 +17,6 @@ import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import CompletionBar from "./components/CompletionBar";
 
-
 export const CompletionBarContext = createContext();
 
 function App() {
@@ -41,6 +40,9 @@ function App() {
               />
             </Navbar.Brand>
             <Nav className="registration-login right-align">
+              <Nav.Link as={Link} to="/leaderboard">
+                Leaderboard
+              </Nav.Link>
               <Nav.Link as={Link} to="/registration">
                 Sign up
               </Nav.Link>
@@ -51,20 +53,10 @@ function App() {
           </Navbar>
         </div>
 
-        
-
-        <div className="title-text"></div>
-        <Stack direction="horizontal" gap={3}>
-          <Leaderboard />
-        </Stack>
-
-        
-
-        
-
         <Routes>
           <Route path="/" element={<TitleScreen />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/characters" element={<Characters />} />
           <Route path="/locations" element={<Locations />} />
