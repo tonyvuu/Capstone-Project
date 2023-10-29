@@ -4,7 +4,6 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import React, { useState, createContext } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import Stack from "react-bootstrap/Stack";
 
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
@@ -15,12 +14,12 @@ import Leaderboard from "./components/Leaderboard";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
-import CompletionBar from "./components/CompletionBar";
+import NavBarTabs from "./components/NavBarTabs";
 
 export const CompletionBarContext = createContext();
 
 function App() {
-  const [progress, setProgress] = useState(0);
+  const [progress, setProgress] = useState(5);
 
   const updateProgress = (increment) => {
     setProgress(progress + increment);
@@ -36,7 +35,7 @@ function App() {
               <img
                 className="image-title"
                 src="https://www.mailordermystery.com/cdn/shop/products/SPIES-Product-Image_1024x.gif?v=1586973228"
-                alt="Spotify Logo"
+                alt="Dev Town Logo"
               />
             </Navbar.Brand>
             <Nav className="registration-login right-align">
@@ -53,6 +52,8 @@ function App() {
           </Navbar>
         </div>
 
+        <NavBarTabs />
+
         <Routes>
           <Route path="/" element={<TitleScreen />} />
           <Route path="/login" element={<Login />} />
@@ -65,10 +66,6 @@ function App() {
           <Route path="/rules" element={<Rules />} />
         </Routes>
 
-        <div className="content">
-          {/* <TitleScreen /> */}
-          {/* <CompletionBar /> */}
-        </div>
       </div>
     </CompletionBarContext.Provider>
   );

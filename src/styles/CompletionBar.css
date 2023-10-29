@@ -1,0 +1,17 @@
+.bar {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+.bar .progress {
+  background-color: blue;
+}
+
+.bar .progress-bar {
+  background-color: black;
+}
+
+.bar .progress-label {
+  color: blue;
+}
