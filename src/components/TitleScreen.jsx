@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Step1 from "../components/Step1";
-import detective from "../detective.png";
+import detective from "../assets/detective.png"
 import "../styles/TitleScreen.css";
 
 const TitleScreen = () => {

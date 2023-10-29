@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "react-bootstrap/Button";
+import {Button, InputGroup} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 
 const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
@@ -17,8 +17,9 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group className="mb-3" controlId="formBasicText">
+        <InputGroup className="mb-3 custom-input-group">
         <Form.Control
+          className="custom-input" 
           type="text"
           placeholder={placeholder}
           value={inputValue}
@@ -28,10 +29,10 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
           }}
         />
         {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-      </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button className="custom-button" type="submit">
         Submit
       </Button>
+      </InputGroup>
     </Form>
   );
 };
