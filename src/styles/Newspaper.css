@@ -1,14 +1,13 @@
-.newspaper-container {
-    background-color: beige;
-    height: 800px;
-    width: 700px;
+.newspaper-container.custom-width {
+  background-color: beige;
+  margin: 0 auto; 
+  padding: 10px;
+  max-width: 97%; 
+  height: auto; 
+}
+
+@media (max-width: 768px) {
+  .newspaper-container.custom-width {
+    padding: 10px;
   }
-  
-  .header {
-    color: black;
-  }
-  
-  .paragraph-text {
-    color: black;
-  }
-  
+}

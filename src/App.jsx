@@ -15,6 +15,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import TitleScreen from "./components/TitleScreen";
 import NavBarTabs from "./components/NavBarTabs";
+import logo from "./icon_hacker.png"
 
 export const CompletionBarContext = createContext();
 
@@ -34,7 +35,7 @@ function App() {
               DevTown Murder Mystery{" "}
               <img
                 className="image-title"
-                src="https://www.mailordermystery.com/cdn/shop/products/SPIES-Product-Image_1024x.gif?v=1586973228"
+                src={logo}
                 alt="Dev Town Logo"
               />
             </Navbar.Brand>

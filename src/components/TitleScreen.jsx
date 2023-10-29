@@ -1,15 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Step1 from "../components/Step1";
-import "../styles/TitleScreen.css";
 import detective from "../detective.png";
+import "../styles/TitleScreen.css";
 
 const TitleScreen = () => {
   const [showStep1, setShowStep1] = useState(false);
 
   return (
     <div className="title-container">
-      <img className="detective" src={detective}></img>
+      <div className="image-container">
+        <img className="detective" src={detective} alt="Detective" />
+      </div>
       <h2>
         Welcome to our game. This is a mystery game that you must solve by
         figuring out the correct clues. Will you be able to find the killer in
@@ -24,3 +26,4 @@ const TitleScreen = () => {
 };
 
 export default TitleScreen;
+
