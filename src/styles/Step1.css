@@ -22,9 +22,9 @@
 }
 
 .custom-button {
-  background-color: #ff6a00; /* Choose your desired color by specifying the hexadecimal or RGB value */
-  color: white; /* Text color for contrast */
-  border: none; /* Remove the button border if needed */
+  background-color: #ff6a00; 
+  color: white; 
+  border: none; 
 }
 
 .custom-button:hover {

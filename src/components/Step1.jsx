@@ -34,11 +34,11 @@ const Step1 = () => {
           style={{ fontSize: "1.5em", whiteSpace: "pre-line" }}
         />
       </div>
-
+      <br/>
       {showForm && (
         <AnswerComponent
           placeholder="Which twin is deceased?"
-          correctAnswer="mckenna"
+          correctAnswer="makenna"
           onCorrectAnswer={() => {
             setIsCorrect(true);
             updateProgress(10);
