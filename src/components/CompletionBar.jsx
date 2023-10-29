@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { CompletionBarContext } from '../App';
+import "../styles/CompletionBar.css";
 
 const CompletionBar = () => {
   const { progress } = useContext(CompletionBarContext);
 
   return (
     <div>
-      <ProgressBar now={progress} label={`${progress}%`} />
+      <ProgressBar className = "bar" now={progress} label={`${progress}%`} />
     </div>
   );
 }

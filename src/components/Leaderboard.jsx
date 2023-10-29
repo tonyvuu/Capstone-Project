@@ -24,6 +24,11 @@ const Leaderboard = () => {
           <td>Tony</td>
           <td>50</td>
         </tr>
+        <tr>
+          <td>3</td>
+          <td>Kenny</td>
+          <td>60</td>
+        </tr>
       </tbody>
     </Table>
 

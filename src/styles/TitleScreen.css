@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&family=Roboto&family=Roboto+Slab:wght@300&display=swap');
 
-.title-container{
-    background-color: black;
-    color: white;
-    font-family: 'Roboto Slab', serif;
+.title-container {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  text-align: center; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.detective {
+  max-width: 100%;
+  height: auto;
 }
