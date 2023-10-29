@@ -1,18 +1,13 @@
-import React from 'react'
-import '../styles/Newspaper.css'
+import React from 'react';
+import '../styles/Newspaper.css';
 
 const Newspaper = () => {
   return (
-    <div classname='container'>
-      <div classname ='newspaper'>
-        <h1 className='header '>DevTown Daily</h1>
-        
-
-      </div>
-
-
+    <div className="newspaper-container">
+      <h1 className="header">DevTown Daily</h1>
+      <p className="paragraph-text">Hello, this is a sample newspaper article.</p>
     </div>
-  )
-}
+  );
+};
 
-export default Newspaper
+export default Newspaper;

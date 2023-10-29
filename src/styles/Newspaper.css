@@ -1,12 +1,14 @@
-.newspaper {
-    display: flex;
+.newspaper-container {
     background-color: beige;
-}
-
-.container {
-    background-color: beige;
-}
-
-.header {
-    color: blue;
-}
+    height: 800px;
+    width: 700px;
+  }
+  
+  .header {
+    color: black;
+  }
+  
+  .paragraph-text {
+    color: black;
+  }
+  
