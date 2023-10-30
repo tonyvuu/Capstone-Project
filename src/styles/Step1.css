@@ -2,8 +2,8 @@
     text-align: left
   }
 .custom-input {
-  background-color: rgb(45, 44, 44); /* Set the input background to black */
-  color: white; /* Set the input text color to white */
+  background-color: rgb(45, 44, 44); 
+  color: white; 
 }
 
 .custom-input::placeholder {
