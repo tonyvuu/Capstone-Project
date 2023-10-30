@@ -1,0 +1,32 @@
+.answer-attempts-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.attempts { 
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+}
+
+.attempts-number { 
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.buttons { 
+    margin-top: 10px; 
+}
+
+@media (max-width: 768px) { 
+    .answer-attempts-container { 
+        flex-direction: column; 
+    }
+
+    .attempts { 
+        margin-bottom: 20px; 
+    } 
+} 
