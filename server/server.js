@@ -2,10 +2,12 @@ const port = 3000;
 const express = require("express");
 const pg = require("pg");
 const sequelize = require("sequelize");
+const cors = require("cors")
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 const {
   Alibis,
@@ -61,6 +63,7 @@ app.post("/register", async (req, res) => {
         password: hash,
       });
       res.json({ message: `User created successfully: ${newUser}` });
+      console.log(`User created successfully: ${newUser}`);
     } catch (error) {
       console.error(error);
       return res.send("An error occurred during registration");
