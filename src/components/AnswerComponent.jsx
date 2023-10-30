@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {Button, InputGroup} from "react-bootstrap";
 import Form from "react-bootstrap/Form";
+import AnswerAttempts from "./AnswerAttempts";
+import { PlayerAttemptsContext } from "../App";
 
 const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
   const [inputValue, setInputValue] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const { updateAttempts } = useContext(PlayerAttemptsContext)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +19,7 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
   };
 
   return (
+    <div>
     <Form onSubmit={handleSubmit}>
         <InputGroup className="mb-3 custom-input-group">
         <Form.Control
@@ -29,11 +33,13 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
           }}
         />
         {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-      <Button className="custom-button" type="submit">
+      <Button className="custom-button" type="submit" onClick={() => updateAttempts(1)}>
         Submit
       </Button>
       </InputGroup>
     </Form>
+    <AnswerAttempts />
+    </div>
   );
 };
 

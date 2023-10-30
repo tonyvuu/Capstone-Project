@@ -1,0 +1,8 @@
+.header-nav-bar{
+}
+
+@media (max-width: 768px) { 
+    .header-nav-bar { 
+        flex-direction: column; 
+    }
+}
