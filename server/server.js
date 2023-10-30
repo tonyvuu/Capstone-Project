@@ -2,12 +2,12 @@ const port = 3000;
 const express = require("express");
 const pg = require("pg");
 const sequelize = require("sequelize");
-const cors = require("cors")
+const cors = require("cors");
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 
 const {
   Alibis,
@@ -29,17 +29,17 @@ app.get("/testGet", async (req, res) => {
 app.get("/users", async (req, res) => {
   console.log("hi");
   const userData = await Users.findAll();
-  console.log(userData)
+  console.log(userData);
   res.json(userData);
 });
 
 app.post("/register", async (req, res) => {
-    if(req.body === undefined) {
-        console.log("Body not received")
-    }
-    
-    console.log("Body: ", req.body)
-   const { firstName, lastName, username, email, password } = req.body;
+  if (req.body === undefined) {
+    console.log("Body not received");
+  }
+
+  console.log("Body: ", req.body);
+  const { firstName, lastName, username, email, password } = req.body;
   const existingUser = await Users.findOne({ where: { email: email } });
 
   if (existingUser) {
@@ -72,18 +72,28 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
   try {
-    const user = await Users.findOne({ where: { username: username } });
-    console.log(user);
-    if (!user) {
-      return res.status(401).json({ error: "Invalid username or password" });
+    const returningUser = await Users.findOne(
+    { where: { email: email } }
+    );
+    console.log(returningUser);
+    if (!returningUser) {
+      return res.status(401).json({ error: "User not found" });
     }
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      return res.status(401).json({ error: "Invalid username or password" });
+
+    const username = returningUser.username;
+    const storedHash = returningUser.password;
+
+    const validPassword = await bcrypt.compare(password, storedHash);
+
+    if (validPassword) {
+        // res.json({ message: "Sign in successful" });
+        console.log("Sign in successful" )
+    } else {
+        return res.status(401).json({ error: "Invalid username or password" });
     }
-    res.json({ message: "Sign in successful" });
+    
   } catch (error) {
     console.error("Error signing in:", error);
     res.status(500).json({ error: "Internal server error" });
