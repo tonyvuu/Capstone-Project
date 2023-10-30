@@ -40,7 +40,6 @@ const Registration = () => {
 
   return (
     <div>
-      <button onClick={(e) => handleRegister(e)}>register info</button>
       <Form onSubmit={(e) => handleRegister(e)}>
         <Form.Group className="mb-3" controlId="formBasicFirstName">
           <Form.Label>First Name</Form.Label>
