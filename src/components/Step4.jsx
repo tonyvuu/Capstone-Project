@@ -13,7 +13,7 @@ const Step4 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputValue.toLowerCase() === 'Devil') {
+    if (inputValue.toLowerCase() === 'devil') {
       setIsCorrect(true);
       setShowErrorMessage(false);
     } else {

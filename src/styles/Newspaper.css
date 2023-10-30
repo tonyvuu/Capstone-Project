@@ -1,9 +1,12 @@
 .newspaper-container.custom-width {
-  background-color: beige;
-  margin: 0 auto; 
+  background-color: #BBB9B4; /* Dark gray background */
+  color: black; /* Light gray text color */
+  margin: 0 auto;
   padding: 10px;
-  max-width: 97%; 
-  height: auto; 
+  max-width: 97%;
+  height: auto;
+  border: 1px solid #000; /* Black border */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); /* Black shadow */
 }
 
 @media (max-width: 768px) {
@@ -11,3 +14,58 @@
     padding: 10px;
   }
 }
+
+.header {
+  font-size: 24px;
+  color: #050404; 
+  text-align: center;
+  font-family: 'News Cycle', sans-serif;
+  font-weight: bold;
+  position: relative;
+}
+.header::before,
+.header::after {
+  content: '';
+  position: absolute;
+  background-color: #000; /* black lines */
+  height: 2px; /* line thickness */
+  width: 40%; /* line width */
+  top: 50%; /* position in the middle of the text */
+  transform: translateY(-50%); /* adjust vertical position */
+}
+
+.header::before {
+  left: 0;
+}
+
+.header::after {
+  right: 0;
+}
+.sub-header{
+  font-size: 24px;
+  color: #050404; 
+  font-family: 'News Cycle', sans-serif;
+  font-weight: bold;
+}
+
+.paragraph-text {
+  font-size: 19px;
+  font-family: 'News Cycle', sans-serif;
+}
+.news-image {
+  max-width: 30%; 
+  height: auto; 
+}
+.coke-image{
+  height: 300px;
+  width: 700px
+}
+.center-image {
+  text-align: center;
+}
+
+
+
+
+
+
