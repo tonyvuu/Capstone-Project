@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
   const [newUser, setNewUser] = useState({
@@ -10,6 +11,8 @@ const Registration = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate()
 
   const { firstName, lastName, username, email, password } = newUser;
 
@@ -32,7 +35,10 @@ const Registration = () => {
       email: "",
       password: "",
     });
+    navigate("/login");
   };
+
+
 
   const inputChange = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
@@ -40,7 +46,6 @@ const Registration = () => {
 
   return (
     <div>
-      <button onClick={(e) => handleRegister(e)}>register info</button>
       <Form onSubmit={(e) => handleRegister(e)}>
         <Form.Group className="mb-3" controlId="formBasicFirstName">
           <Form.Label>First Name</Form.Label>
