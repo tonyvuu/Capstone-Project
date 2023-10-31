@@ -62,15 +62,16 @@ const TitleScreen = () => {
         figuring out the correct clues. Will you be able to find the killer in
         time?
       </h2>
+      <br />
       <Button
         size="lg"
-        variant="danger"
+        className="custom-button"
         onClick={() => {
           setShowStep1(true);
           setShowTimer(true);
         }}
       >
-        Play
+        Start Game
       </Button>{" "}
       {showTimer && <Timer />}
       {showStep1 && (

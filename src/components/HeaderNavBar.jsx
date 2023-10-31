@@ -14,8 +14,8 @@ const HeaderNavBar = () => {
       <div className="header-nav">
         <Navbar variant="dark">
           <Navbar.Brand className="navbar-title-icon" as={Link} to="/">
-            DevTown Murder Mystery{" "}
             <img className="image-title" src={logo} alt="Dev Town Logo" />
+                DevTown Murder Mystery{" "}
           </Navbar.Brand>
           <Nav className="registration-login right-align">
             <Nav.Link as={Link} to="/leaderboard">

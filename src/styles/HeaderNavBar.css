@@ -1,9 +1,16 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&family=Oswald&family=Signika+Negative&family=Space+Grotesk&display=swap');
 .navbar-title-icon{
-    font-size: xx-large
+    font-size: xx-large;
+    font-family: 'Roboto Slab', sans-serif;
 }
 
 @media (max-width: 768px) { 
     .header-nav-bar { 
         flex-direction: column; 
     }
+}
+
+.image-title{
+margin-right: 8px;
 }
