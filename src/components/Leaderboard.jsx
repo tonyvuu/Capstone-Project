@@ -37,3 +37,6 @@ const Leaderboard = () => {
 }
 
 export default Leaderboard
+
+
+// after I'm going through the mystery game, I want the game to end somehow, and when that ending screen or component is rendered, I want to record the move count. I want that move count to show up in the leaderboard as a new entry. Since there's no login right now, I want the user name to be "anon". So their rank, based on the lowest moves, their username, in this case "anon" and their recorded moves for example 50. Here's the current leaderboard component's layout: 
