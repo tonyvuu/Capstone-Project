@@ -67,7 +67,7 @@ const Login = () => {
           onChange={(e) => inputChange(e)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button className="custom-button" type="submit">
           Submit
         </Button>
       </Form>

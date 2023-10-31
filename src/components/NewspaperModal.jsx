@@ -70,7 +70,7 @@ const NewspaperModal = ({ show, onClose }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
+        <Button className="custom-button" onClick={onClose}>
           Close
         </Button>
       </Modal.Footer>
