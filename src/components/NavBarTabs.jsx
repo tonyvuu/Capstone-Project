@@ -1,78 +1,76 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
-// import Nav from 'react-bootstrap/Nav';
-
-// const NavBarTabs = () => {
-//   return (
-//     <div>
-//       <Nav justify variant="tabs" defaultActiveKey="/">
-//         <Nav.Item>
-//           <Nav.Link as={Link} to="/characters">Characters</Nav.Link>
-//         </Nav.Item>
-//         <Nav.Item>
-//           <Nav.Link as={Link} to="/newspaper">Newspaper</Nav.Link>
-//         </Nav.Item>
-//         <Nav.Item>
-//           <Nav.Link as={Link} to="/police-report">Police Report</Nav.Link>
-//         </Nav.Item>
-//         <Nav.Item>
-//           <Nav.Link as={Link} to="/locations">Locations</Nav.Link>
-//         </Nav.Item>
-//         <Nav.Item>
-//           <Nav.Link as={Link} to="/rules">Rules</Nav.Link>
-//         </Nav.Item>
-//       </Nav>
-//     </div>
-//   );
-// };
-
-// export default NavBarTabs;
-
-//Nav Bar Tabs with the modal/lightbox feature
-
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Nav from 'react-bootstrap/Nav';
-import NewspaperModal from './NewspaperModal'; 
-import '../styles/NavBar.css'
+import React, { useState } from "react";
+import Nav from "react-bootstrap/Nav";
+import NewspaperModal from "./NewspaperModal";
+import CharacterModal from './CharacterModal'
+import PhotoModal from "./PhotoModal";
+import AlibiModal from "./AlibiModal";
 
 const NavBarTabs = () => {
-  const [showModal, setShowModal] = useState(false);
+  const [showCharacterModal, setShowCharacterModal] = useState(false);
+  const [showNewsModal, setShowNewsModal] = useState(false);
+  const [showPhotoModal, setShowPhotoModal] = useState(false);
+  const [showAlibiModal, setShowAlibiModal] = useState(false);
 
-  const openModal = () => {
-    setShowModal(true);
+  const openCharacterModal = () => {
+    setShowCharacterModal(true);
   };
 
-  const closeModal = () => {
-    setShowModal(false);
+  const closeCharacterModal = () => {
+    setShowCharacterModal(false);
+  };
+  const openNewsModal = () => {
+    setShowNewsModal(true);
+  };
+
+  const closeNewsModal = () => {
+    setShowNewsModal(false);
+  };
+  const openPhotoModal = () => {
+    setShowPhotoModal(true);
+  };
+
+  const closePhotoModal = () => {
+    setShowPhotoModal(false);
+  };
+  const openAlibiModal = () => {
+    setShowAlibiModal(true);
+  };
+
+  const closeAlibiModal = () => {
+    setShowAlibiModal(false);
   };
 
   return (
     <div>
       <Nav justify variant="tabs" defaultActiveKey="/">
         <Nav.Item>
-          <Nav.Link as={Link} to="/characters" className="navbar-link">Characters</Nav.Link>
+          <div className="nav-link" onClick={openCharacterModal}>
+            Characters
+          </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link" onClick={openModal}>
+          <div className="nav-link" onClick={openNewsModal}>
             Newspaper
           </div>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to="/police-report" className="navbar-link">Police Report</Nav.Link>
+          <div className="nav-link" onClick={openPhotoModal}>
+            Photo Gallery
+          </div>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link as={Link} to="/locations" className="navbar-link">Locations</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link as={Link} to="/rules" className="navbar-link">Rules</Nav.Link>
+          <div className="nav-link" onClick={openAlibiModal}>
+            Alibi
+          </div>
         </Nav.Item>
       </Nav>
 
-      <NewspaperModal show={showModal} onClose={closeModal} />
+      <CharacterModal show={showCharacterModal} onClose={closeCharacterModal} />
+      <NewspaperModal show={showNewsModal} onClose={closeNewsModal} />
+      <PhotoModal show={showPhotoModal} onClose={closePhotoModal} />
+      <AlibiModal show={showAlibiModal} onClose={closeAlibiModal} />
     </div>
   );
 };
 
 export default NavBarTabs;
-
