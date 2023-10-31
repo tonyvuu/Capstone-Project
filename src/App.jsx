@@ -8,6 +8,7 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import NavBarTabs from "./components/NavBarTabs";
 import TitleScreen from "./components/TitleScreen";
+import AuthProvider from "./components/AuthContext";
 
 export const CompletionBarContext = createContext();
 export const PlayerAttemptsContext = createContext();
@@ -25,22 +26,24 @@ function App() {
   };
 
   return (
-    <PlayerAttemptsContext.Provider value={{ attempts, updateAttempts }}>
-      <CompletionBarContext.Provider value={{ progress, updateProgress }}>
-        <div>
-          <HeaderNavBar />
-          {/* <TitleScreen /> */}
-          <NavBarTabs />
+    <AuthProvider>
+      <PlayerAttemptsContext.Provider value={{ attempts, updateAttempts }}>
+        <CompletionBarContext.Provider value={{ progress, updateProgress }}>
+          <div>
+            <HeaderNavBar />
+            {/* <TitleScreen /> */}
+            <NavBarTabs />
 
-          <Routes>
-            <Route path="/" element={<TitleScreen />} />
-            <Route path="/leaderboard" element={<Leaderboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/registration" element={<Registration />} />
-          </Routes>
-        </div>
-      </CompletionBarContext.Provider>
-    </PlayerAttemptsContext.Provider>
+            <Routes>
+              <Route path="/" element={<TitleScreen />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/registration" element={<Registration />} />
+            </Routes>
+          </div>
+        </CompletionBarContext.Provider>
+      </PlayerAttemptsContext.Provider>
+    </AuthProvider>
   );
 }
 
