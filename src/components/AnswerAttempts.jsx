@@ -7,7 +7,7 @@ const AnswerAttempts = () => {
   return (
     <div className="answer-attempts-container">
       <div className="attempts">
-        <h2>Attempts - {attempts}</h2>
+        <h2>Moves - {attempts}</h2>
         {/* <p className="attempts-number">{attempts}</p> */}
 
       </div>

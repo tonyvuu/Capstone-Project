@@ -8,11 +8,6 @@ import Login from "./components/Login";
 import Registration from "./components/Registration";
 import NavBarTabs from "./components/NavBarTabs";
 import TitleScreen from "./components/TitleScreen";
-import Characters from "./components/Characters";
-import Locations from "./components/Locations";
-import Newspaper from "./components/Newspaper";
-import PoliceReport from "./components/PoliceReport";
-import Rules from "./components/Rules";
 
 export const CompletionBarContext = createContext();
 export const PlayerAttemptsContext = createContext();
@@ -34,18 +29,14 @@ function App() {
       <CompletionBarContext.Provider value={{ progress, updateProgress }}>
         <div>
           <HeaderNavBar />
+          {/* <TitleScreen /> */}
           <NavBarTabs />
 
           <Routes>
             <Route path="/" element={<TitleScreen />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/registration" element={<Registration />} />
-            <Route path="/characters" element={<Characters />} />
-            <Route path="/locations" element={<Locations />} />
-            <Route path="/newspaper" element={<Newspaper />} />
-            <Route path="/police-report" element={<PoliceReport />} />
-            <Route path="/rules" element={<Rules />} />
           </Routes>
         </div>
       </CompletionBarContext.Provider>
