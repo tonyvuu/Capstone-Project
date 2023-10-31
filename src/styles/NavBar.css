@@ -8,7 +8,7 @@
 .nav-link2 {
     color: #ff6a00;
     font-family: 'Oswald', sans-serif;
-    font-size: large;
+    font-size: 22px;
     transition: border 0.3s; 
     border: 1px solid transparent; 
     border-top-right-radius: 7px;

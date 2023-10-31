@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Luckiest+Guy&family=Onest&family=Oswald&family=Roboto&display=swap');
+.character-card {
+    width: 30%;
+    text-align: center;
+    margin: 10px;
+  }
+  
+  .character-image {
+    height: 300px; 
+    object-fit: cover; 
+  }
+  
+  .card-title {
+    text-align: center;
+  }
+  
+  .custom-font{
+    font-family: 'Roboto', sans-serif;}
