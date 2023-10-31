@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -25,10 +26,23 @@ const Login = () => {
       },
       body: JSON.stringify(loginInfo),
     });
+
+  };
+
+  const navigate = useNavigate()
+
+  const redirect = () => {
+    console.log('test')
+    navigate('/')
   }
 
   return (
     <div>
+
+      <button onClick={redirect}>Test Redirect</button>
+
+
+
       <h1>Login</h1>
       <Form onSubmit={(e) => handleLogin(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { redirect } from "react-router-dom";
+import { Navigate, redirect } from "react-router-dom";
 
 const Registration = () => {
   const [newUser, setNewUser] = useState({
@@ -33,9 +33,8 @@ const Registration = () => {
       email: "",
       password: "",
     });
+    
   };
-
-  
 
   const inputChange = (e) => {
     setNewUser({ ...newUser, [e.target.name]: e.target.value });
