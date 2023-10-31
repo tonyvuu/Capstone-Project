@@ -4,6 +4,7 @@ import NewspaperModal from "./NewspaperModal";
 import CharacterModal from './CharacterModal'
 import PhotoModal from "./PhotoModal";
 import AlibiModal from "./AlibiModal";
+import '../styles/NavBar.css'
 
 const NavBarTabs = () => {
   const [showCharacterModal, setShowCharacterModal] = useState(false);
@@ -44,22 +45,22 @@ const NavBarTabs = () => {
     <div>
       <Nav justify variant="tabs" defaultActiveKey="/">
         <Nav.Item>
-          <div className="nav-link" onClick={openCharacterModal}>
+          <div className="nav-link2" onClick={openCharacterModal}>
             Characters
           </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link" onClick={openNewsModal}>
+          <div className="nav-link2" onClick={openNewsModal}>
             Newspaper
           </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link" onClick={openPhotoModal}>
+          <div className="nav-link2" onClick={openPhotoModal}>
             Photo Gallery
           </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link" onClick={openAlibiModal}>
+          <div className="nav-link2" onClick={openAlibiModal}>
             Alibi
           </div>
         </Nav.Item>
