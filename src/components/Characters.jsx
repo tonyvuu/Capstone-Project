@@ -1,14 +1,10 @@
-import React from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+import React from 'react'
 import { Container, Row, Card } from 'react-bootstrap';
 
-const NewspaperModal = ({ show, onClose }) => {
+const Characters = () => {
   return (
-    <Modal show={show} onHide={onClose} size="xl">
-      <Modal.Header closeButton>
-      </Modal.Header>
-      <Modal.Body>
+    <div>
+      <br />
       <Container>
       <Row className='mx-2 row row-cols-3'>
       <Card >
@@ -63,20 +59,13 @@ const NewspaperModal = ({ show, onClose }) => {
       <Card >
       <Card.Img src="https://media.istockphoto.com/id/184918973/photo/sad-man-in-a-light-blue-t-shirt-on-a-white-background.jpg?s=612x612&w=0&k=20&c=wvQQmoyPtigX707EScGDcizgDi5ds5PH6pf_YZo1QeM=" />
       <Card.Body>
-      <Card.Title>Tony</Card.Title>
+      <Card.Title>Adam Doe(Father)</Card.Title>
       </Card.Body>
       </Card>
       </Row>
       </Container>
-       
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
-          Close
-        </Button>
-      </Modal.Footer>
-    </Modal>
-  );
-};
+    </div>
+  )
+}
 
-export default NewspaperModal;
+export default Characters
