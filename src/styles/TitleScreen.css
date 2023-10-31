@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Poppins:wght@400;800&family=Roboto&family=Roboto+Slab:wght@100;200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Poppins:wght@400;800&family=Roboto&family=Roboto+Slab:wght@100;200&display=swap');
 .title-container {
   background-color: black;
   color: white;
@@ -13,4 +13,55 @@
 .detective {
   max-width: 100%;
   height: auto;
+} */
+
+/* TitleScreen.css */
+
+@import url('https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&family=Poppins:wght@400;800&family=Roboto&family=Roboto+Slab:wght@100;200&display=swap');
+
+.title-container {
+  background-color: black;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  text-align: center;
+  padding: 20px; 
+  overflow-y: hidden; 
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.detective {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.scrollable-box {
+  max-height: 500px; 
+  overflow-y: auto;
+  padding: 10px; 
+}
+
+.scrollable-box::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.scrollable-box::-webkit-scrollbar-thumb {
+  background-color: #888; 
+  border-radius: 6px; 
+}
+
+.scrollable-box::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.scrollable-box::-webkit-scrollbar-track {
+  background: black; 
+}
+
+.scrollable-box::-webkit-scrollbar-track:hover {
+  background: black 
 }
