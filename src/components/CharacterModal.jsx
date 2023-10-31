@@ -63,7 +63,7 @@ const NewspaperModal = ({ show, onClose }) => {
       <Card >
       <Card.Img src="https://media.istockphoto.com/id/184918973/photo/sad-man-in-a-light-blue-t-shirt-on-a-white-background.jpg?s=612x612&w=0&k=20&c=wvQQmoyPtigX707EScGDcizgDi5ds5PH6pf_YZo1QeM=" />
       <Card.Body>
-      <Card.Title>Adam Doe(Father)</Card.Title>
+      <Card.Title>Tony</Card.Title>
       </Card.Body>
       </Card>
       </Row>
