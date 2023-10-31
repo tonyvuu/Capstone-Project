@@ -10,7 +10,6 @@ import NavBarTabs from "./components/NavBarTabs";
 import TitleScreen from "./components/TitleScreen";
 import Characters from "./components/Characters";
 import Locations from "./components/Locations";
-import Newspaper from "./components/Newspaper";
 import PoliceReport from "./components/PoliceReport";
 import Rules from "./components/Rules";
 
@@ -43,7 +42,6 @@ function App() {
             <Route path="/registration" element={<Registration />} />
             <Route path="/characters" element={<Characters />} />
             <Route path="/locations" element={<Locations />} />
-            <Route path="/newspaper" element={<Newspaper />} />
             <Route path="/police-report" element={<PoliceReport />} />
             <Route path="/rules" element={<Rules />} />
           </Routes>
