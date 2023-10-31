@@ -8,6 +8,15 @@ const saltRounds = 10;
 const app = express();
 app.use(express.json());
 app.use(cors());
+const session = require("express-session")
+
+app.use(
+  session({
+    secret: "digitalCrafts",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 const {
   Alibis,
@@ -20,6 +29,14 @@ const {
   Scores,
   Users,
 } = require("./models");
+
+// middleware to test if authenticated
+const authenticated = (req, res, next) => {
+    if (req.session.user) {
+        next();
+    }
+    else next('/login')
+  }
 
 app.get("/testGet", async (req, res) => {
   console.log("Working...");
@@ -64,6 +81,7 @@ app.post("/register", async (req, res) => {
       });
       res.json({ message: `User created successfully: ${newUser}` });
       console.log(`User created successfully: ${newUser}`);
+
     } catch (error) {
       console.error(error);
       return res.send("An error occurred during registration");
@@ -72,33 +90,41 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-  try {
-    const returningUser = await Users.findOne(
-    { where: { email: email } }
-    );
-    console.log(returningUser);
-    if (!returningUser) {
-      return res.status(401).json({ error: "User not found" });
-    }
-
-    const username = returningUser.username;
-    const storedHash = returningUser.password;
-
-    const validPassword = await bcrypt.compare(password, storedHash);
-
-    if (validPassword) {
-        // res.json({ message: "Sign in successful" });
-        console.log("Sign in successful" )
-    } else {
+    const { email, password } = req.body;
+    try {
+      const returningUser = await Users.findOne({ where: { email: email } });
+      if (!returningUser) {
+        return res.status(401).json({ error: "User not found" });
+      }
+  
+      const username = returningUser.username;
+      const storedHash = returningUser.password;
+  
+      const validPassword = await bcrypt.compare(password, storedHash);
+  
+      if (validPassword) {
+        req.session.isAuthenticated = true; // Set session data
+        req.session.userID = returningUser.id; // Store the user's ID in the session
+        console.log("Sign in successful");
+      } else {
         return res.status(401).json({ error: "Invalid username or password" });
+      }
+    } catch (error) {
+      console.error("Error signing in:", error);
+      res.status(500).json({ error: "Internal server error" });
     }
-    
-  } catch (error) {
-    console.error("Error signing in:", error);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
+  });
+
+  app.get("/logout", (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error("Error destroying session:", err);
+      }
+      res.redirect("/"); // Redirect to the login or home page
+    });
+    res.send("logged out");
+  });
+  
 
 app.listen(port, () => {
   console.log(`Server is running on port 3000`);

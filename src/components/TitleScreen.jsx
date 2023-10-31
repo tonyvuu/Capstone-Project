@@ -9,6 +9,9 @@ const TitleScreen = () => {
 
   return (
     <div className="title-container">
+      {/* {!user then display login and sign up
+            user then {<det. id} hide the login and sign up
+            } */}
       <div className="image-container">
         <img className="detective" src={detective} alt="Detective" />
       </div>

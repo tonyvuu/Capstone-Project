@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -9,12 +9,14 @@ const Login = () => {
     password: "",
   });
 
+  const navigate = useNavigate()
+
   const { email, password } = loginInfo;
 
   const inputChange = (e) => {
     setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });
   };
-
+  
   const handleLogin = async(e) => {
     e.preventDefault();
     console.log(loginInfo);
@@ -27,19 +29,18 @@ const Login = () => {
       body: JSON.stringify(loginInfo),
     });
 
+    setLoginInfo({
+      email: "",
+      password: ""
+    });
+    navigate("/")
+
   };
-
-  const navigate = useNavigate()
-
-  const redirect = () => {
-    console.log('test')
-    navigate('/')
-  }
 
   return (
     <div>
 
-      <button onClick={redirect}>Test Redirect</button>
+      {/* <button onClick={redirect}>Test Redirect</button> */}
 
 
 
