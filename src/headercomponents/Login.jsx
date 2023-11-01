@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../components/AuthContext";
+import '../styles/Login.css'
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -56,7 +57,7 @@ const Login = () => {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Email or Username"
+            placeholder="Enter email"
             name="email"
             value={email}
             onChange={(e) => inputChange(e)}
@@ -67,7 +68,7 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Enter password"
             name="password"
             value={password}
             onChange={(e) => inputChange(e)}

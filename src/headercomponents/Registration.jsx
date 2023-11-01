@@ -86,7 +86,7 @@ const Registration = () => {
             type="password"
             name="password"
             value={password}
-            placeholder="Password"
+            placeholder="Enter password"
             onChange={(e) => inputChange(e)}
           />
         </Form.Group>
