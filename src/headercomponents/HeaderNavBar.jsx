@@ -4,7 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
 import logo from "../assets/icon_hacker.png";
 import "../styles/HeaderNavBar.css";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../components/AuthContext";
 
 const HeaderNavBar = () => {
   const { isAuthenticated, username, logout } = useAuth();
