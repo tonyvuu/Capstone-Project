@@ -1,0 +1,16 @@
+.answer-component {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .move-count-container {
+    display: flex;
+    margin-right: 5px; /* Adjust as needed */
+    justify-content: right;
+  }
+  
+  .custom-input-form {
+    flex: 1;
+  }
+  

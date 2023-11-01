@@ -4,9 +4,9 @@ import NewspaperModal from "./NewspaperModal";
 import CharacterModal from './CharacterModal'
 import PhotoModal from "./PhotoModal";
 import AlibiModal from "./AlibiModal";
-import '../styles/NavBar.css'
+import '../styles/CluesTabs.css'
 
-const NavBarTabs = () => {
+const CluesTabs = () => {
   const [showCharacterModal, setShowCharacterModal] = useState(false);
   const [showNewsModal, setShowNewsModal] = useState(false);
   const [showPhotoModal, setShowPhotoModal] = useState(false);
@@ -74,4 +74,4 @@ const NavBarTabs = () => {
   );
 };
 
-export default NavBarTabs;
+export default CluesTabs;
