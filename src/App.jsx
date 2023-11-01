@@ -2,23 +2,25 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
-import HeaderNavBar from "./components/HeaderNavBar";
-import Leaderboard from "./components/Leaderboard";
-import Login from "./components/Login";
-import Registration from "./components/Registration";
-import NavBarTabs from "./components/NavBarTabs";
+import HeaderNavBar from "./headercomponents/HeaderNavBar";
+import Leaderboard from "./headercomponents/Leaderboard";
+import Login from "./headercomponents/Login";
+import Registration from "./headercomponents/Registration";
+import CluesTabs from "./cluescomponents/CluesTabs";
 import TitleScreen from "./components/TitleScreen";
 import AuthProvider from "./components/AuthContext";
 
+export const LeaderboardContext = createContext();
 export const CompletionBarContext = createContext();
-export const PlayerAttemptsContext = createContext();
+export const MoveCountContext = createContext();
 
 function App() {
   const [progress, setProgress] = useState(5);
-  const [attempts, setAttempts] = useState(0);
+  const [moveCount, setMoveCount] = useState(0);
+  const [leaderboardData, setLeaderboardData] = useState([]);
 
-  const updateAttempts = (increment) => {
-    setAttempts(attempts + increment);
+  const updateMoveCount = (increment) => {
+    setMoveCount(moveCount + increment);
   };
 
   const updateProgress = (increment) => {
@@ -27,22 +29,24 @@ function App() {
 
   return (
     <AuthProvider>
-      <PlayerAttemptsContext.Provider value={{ attempts, updateAttempts }}>
+      <LeaderboardContext.Provider
+        value={{ leaderboardData, setLeaderboardData }}
+      >
         <CompletionBarContext.Provider value={{ progress, updateProgress }}>
-          <div>
-            <HeaderNavBar />
-            {/* <TitleScreen /> */}
-            <NavBarTabs />
-
-            <Routes>
-              <Route path="/" element={<TitleScreen />} />
-              <Route path="/leaderboard" element={<Leaderboard />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/registration" element={<Registration />} />
-            </Routes>
-          </div>
+          <MoveCountContext.Provider value={{ moveCount, updateMoveCount }}>
+            <div>
+              <HeaderNavBar />
+              <CluesTabs />
+              <Routes>
+                <Route path="/" element={<TitleScreen />} />
+                <Route path="/leaderboard" element={<Leaderboard />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/registration" element={<Registration />} />
+              </Routes>
+            </div>
+          </MoveCountContext.Provider>
         </CompletionBarContext.Provider>
-      </PlayerAttemptsContext.Provider>
+      </LeaderboardContext.Provider>
     </AuthProvider>
   );
 }
