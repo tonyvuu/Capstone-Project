@@ -3,16 +3,36 @@
     width: 30%;
     text-align: center;
     margin: 10px;
-  }
+}
   
   .character-image {
     height: 300px; 
     object-fit: cover; 
-  }
+}
   
   .card-title {
     text-align: center;
-  }
+}
   
-  .custom-font{
-    font-family: 'Roboto', sans-serif;}
+.custom-font{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+.modal-body{
+    /* background-color:black; */
+}
+
+.character-card.card{
+    background-color: #333;
+    border: 2px solid ;
+}
+
+.modal-header{
+    /* background-color: black */
+}
+.modal-footer{
+    /* background-color: black */
+
+}
+

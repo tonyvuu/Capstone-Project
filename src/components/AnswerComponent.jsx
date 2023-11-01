@@ -37,7 +37,7 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
             }}
           />
           {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-          <Button className="custom-button" type="submit" onClick={() => updateMoveCount(1)}>
+          <Button className="custom-button1" type="submit" onClick={() => updateMoveCount(1)}>
             Submit
           </Button>
         </InputGroup>
