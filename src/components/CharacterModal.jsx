@@ -45,7 +45,7 @@ const NewspaperModal = ({ show, onClose }) => {
     <Modal show={show} onHide={onClose} size="xl">
       <Modal.Header closeButton>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body >
         <Container>
           <Row className='mx-2 row row-cols-3'>
             {characters.map((character, index) => (
@@ -134,6 +134,13 @@ const characters = [
     description: 'Description for Tyson Berry',
     image: 'https://media.istockphoto.com/id/1302985743/photo/professional-cook-with-own-business-mature-male-cook-isolated-on-white-confident-chef-in.jpg?s=612x612&w=0&k=20&c=_Qo1qpoeHkEBp7cRwhT3z0zcu7pPFIZOlpU_HR3YD98=',
   },
+  {
+    name: 'Officer Paul',
+    height: '5"7',
+    weight: '130',
+    description: 'Description for Officer Paul',
+    image: 'https://media.istockphoto.com/id/536195589/photo/portrait-of-a-police-officer.jpg?s=612x612&w=0&k=20&c=57aqTIv86a22tHhowmVgIqZK4psSO54RWtUeJuwXuys=',
+  }
   // Add more character objects here
 ];
 

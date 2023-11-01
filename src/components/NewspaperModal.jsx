@@ -9,7 +9,7 @@ const NewspaperModal = ({ show, onClose }) => {
     <Modal show={show} onHide={onClose} size="xl">
       <Modal.Header closeButton>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='newspaper-modal-body'>
         <div className="newspaper-container custom-width">
           <h1 className="header">DAILY NEWS</h1>
           <br />

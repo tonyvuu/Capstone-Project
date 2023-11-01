@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Adamina&family=Luckiest+Guy&family=Montserrat:wght@300&family=Onest&family=Oswald&family=Roboto&display=swap');
+
+.registration-page {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.registration-container {
+    width: 400px;
+    border: 10px solid #333;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+
+}
+  
+.registration-container h2 {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder; 
+  }
+  
+  .registration-container input {
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+  .registration-container ::placeholder {
+    color: #999;
+    font-family: 'Montserrat', sans-serif;
+}
+  
+.custom-button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 300px; 
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 20px;
+  }
+.registration-container label {
+    color: #ff6a00;
+    font-size: 15px; 
+  }
+.terms{
+    color:#ff6a00 ;
+}
+.terms-policy {
+    font-size: 13px; 
+  }
