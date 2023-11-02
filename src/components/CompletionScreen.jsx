@@ -26,17 +26,17 @@ const CompletionScreen = () => {
 
   const speed = 99;
   const [addedToLeaderboard, setAddedToLeaderboard] = useState(false);
-  const [username, setUsername] = useState('');
+  const [name, setName] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleNameChange = (event) => {
+    setName(event.target.value);
   };
 
   const handleSubmit = () => {
-    const ifEntryExists = leaderboardData.some((entry) => entry.username === username);
+    const ifEntryExists = leaderboardData.some((entry) => entry.name === name);
 
-    if (!ifEntryExists && !addedToLeaderboard && username) {
-      const newEntry = { username, moveCount };
+    if (!ifEntryExists && !addedToLeaderboard && name) {
+      const newEntry = { name, moveCount };
       setLeaderboardData([...leaderboardData, newEntry]);
       setAddedToLeaderboard(true);
     }
@@ -67,8 +67,8 @@ const CompletionScreen = () => {
       <input
         type="text"
         placeholder="Enter your name"
-        value={username}
-        onChange={handleUsernameChange}
+        value={name}
+        onChange={handleNameChange}
       />
       
       <button onClick={handleSubmit}>Submit</button>
