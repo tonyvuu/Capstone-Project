@@ -1,43 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Step1 from "../components/Step1";
-import Timer from "./Timer";
-import detective from "../assets/detective.png";
+import antique from "../assets/antique.jpg";
 import "../styles/TitleScreen.css";
-import CluesTabs from "../cluescomponents/CluesTabs";
+
 
 const TitleScreen = () => {
-  const [showStep1, setShowStep1] = useState(false);
-  const [showTimer, setShowTimer] = useState(false);
-
   return (
     <div className="title-container">
-      <CluesTabs />
       <div className="image-container">
-        <img className="detective" src={detective} alt="Detective" />
+        <img className="antique" src={antique} alt="Antique" />
       </div>
       <h2>
-        Welcome to our game. This is a mystery game that you must solve by
-        figuring out the correct clues. Will you be able to find the killer in
-        time?
+      Enter into the Dev Town Murder Mystery. It's a challenging puzzle where you'll solve the riddles to unravel the secrets. Can you expose the culprit before time runs out?
       </h2>
       <br />
-      <Button
-        size="lg"
-        className="custom-button"
-        onClick={() => {
-          setShowStep1(true);
-          setShowTimer(true);
-        }}
-      >
-        Start Game
-      </Button>{" "}
-      {showTimer && <Timer />}
-      {showStep1 && (
-        <div className="scrollable-box"> 
-          <Step1 />
-        </div>
-      )}
+      <Link to="/game">
+        <Button size="lg" className="custom-button">
+          Play
+        </Button>
+      </Link>{" "}
     </div>
   );
 };

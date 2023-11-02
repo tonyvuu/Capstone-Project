@@ -30,6 +30,8 @@ const Step1 = () => {
 
   return (
     <div>
+      <CompletionBar />
+      <br></br>
       <div className="story-text">
         <TypeAnimation
           sequence={[text]}
@@ -49,9 +51,9 @@ const Step1 = () => {
         />
       )}
 
-      {isCorrect && <CompletionScreen moveCount = {moveCount} />}
-      {/* {isCorrect && <Step2 />} */}
-      <CompletionBar />
+      {/* {isCorrect && <CompletionScreen moveCount = {moveCount} />} */}
+      {isCorrect && <Step2 />}
+      
     </div>
   );
 };

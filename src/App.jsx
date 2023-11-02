@@ -6,9 +6,9 @@ import HeaderNavBar from "./headercomponents/HeaderNavBar";
 import Leaderboard from "./headercomponents/Leaderboard";
 import Login from "./headercomponents/Login";
 import Registration from "./headercomponents/Registration";
-import CluesTabs from "./cluescomponents/CluesTabs";
 import TitleScreen from "./components/TitleScreen";
 import AuthProvider from "./components/AuthContext";
+import GameScreen from "./components/GameScreen";
 
 export const LeaderboardContext = createContext();
 export const CompletionBarContext = createContext();
@@ -41,6 +41,7 @@ function App() {
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
+                <Route path="/game" element={<GameScreen />} />
               </Routes>
             </div>
           </MoveCountContext.Provider>
