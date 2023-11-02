@@ -16,7 +16,7 @@ const Leaderboard = () => {
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Username</th>
+            <th>Name</th>
             <th>Moves</th>
           </tr>
         </thead>
@@ -24,7 +24,7 @@ const Leaderboard = () => {
           {sortedLeaderboard.map((entry, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>{entry.username}</td>
+              <td>Detective {entry.name}</td>
               <td>{entry.moveCount}</td>
             </tr>
           ))}
