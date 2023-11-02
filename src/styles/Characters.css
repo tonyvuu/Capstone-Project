@@ -6,12 +6,12 @@
     margin: 10px;
 }
   
-  .character-image {
+.character-image {
     height: 300px; 
     object-fit: cover; 
 }
   
-  .card-title {
+.card-title {
     text-align: center;
 }
   
@@ -41,6 +41,21 @@
     background-color: #333;
     color: white;
 }
+.italic-text {
+    font-style: italic;
+  }
 
+@media screen and (max-width: 620px) {
+    .character-card {
+        width: 100%;
+        text-align: center;
+        margin: 10px;
+    }
+      
+    .character-image {
+        height: 300px; 
+        object-fit: cover; 
+    }
+  }
 
 
