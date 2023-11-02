@@ -49,7 +49,7 @@ const Step1 = () => {
         />
       )}
 
-      {isCorrect && <CompletionScreen moveCount = {moveCount} />}
+      {isCorrect && <Step2 />}
       <CompletionBar />
     </div>
   );

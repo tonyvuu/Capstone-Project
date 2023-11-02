@@ -60,11 +60,13 @@ const NewspaperModal = ({ show, onClose }) => {
           </p>
           <br />
           <div className="image-with-border">
-            <img src="https://adstrategy.files.wordpress.com/2010/04/1951_coke_ad_p6_charleroi-mail2.jpg" alt="Movie Set" className="coke-image" />
             <div className="text-inside-border">
-            <h1 className='coke-header' style={{ textAlign: "center", fontStyle: "italic" }}>Coca-Cola</h1>
+            <h1 className='coke-header'>Coca-Cola</h1>
             <h3 className='coke-header2'>Announcing a Reduction In Bottled Coca-Cola To The Old Pre-War Price of Fifteen Cents</h3>
               <p className='coke-text'>We are delighted to announce to the public that our company is now offering Bottled Coca-Cola to retailers at a price that allows them to sell it for just 15 CENTS PER BOTTLE once again.<br /> <br /> We understand that people are seeking cost reductions in their purchases during these times. We recently received confirmation that Coca-Cola syrup prices will be lowered on November 1st. Until then, we not only intend to forgo our profits but also absorb a loss. <br/><br /> Would you please express your gratitude by requesting BOTTLED COCA-COLA? Bottled Coca-Cola maintains its exceptional quality, and there are three compelling reasons to choose Coca-Cola from Bottles:<br/><br />1st: You get genuine Coca-Cola. <br />2nd: From sealed and hygienic bottles. <br />3rd: It's mixed to perfection.  </p>
+            </div>
+            <div className='coke-image2'>
+            <img src="https://adstrategy.files.wordpress.com/2010/04/1951_coke_ad_p6_charleroi-mail2.jpg" alt="Movie Set" className="coke-image" />
             </div>
           </div>
         </div>

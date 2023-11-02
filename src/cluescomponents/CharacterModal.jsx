@@ -16,7 +16,7 @@ const CharacterInfoModal = ({ show, onClose, characterName, characterDescription
         <p>{characterDescription}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
+        <Button className='custom-button' onClick={onClose}>
           Close
         </Button>
       </Modal.Footer>
