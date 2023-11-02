@@ -5,7 +5,16 @@
 }
 
 .bar .progress {
-  background-color: blue;
+  background-color: orange; 
+  height: 10px; 
+  width: 50%; 
+}
+
+.custom-progress-bar {
+  background-color: #333;
+  height: 20px; 
+  width: 20%; 
+  color: blue;
 }
 
 .bar .progress-bar {
@@ -13,5 +22,5 @@
 }
 
 .bar .progress-label {
-  color: blue;
+  color: orange;
 }

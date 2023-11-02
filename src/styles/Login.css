@@ -1,5 +1,6 @@
 .login-page {
     background-color: black;
+    background: url("./assets/rain-drizzle.gif") repeat;
     height: 100vh;
     display: flex;
     justify-content: center;
