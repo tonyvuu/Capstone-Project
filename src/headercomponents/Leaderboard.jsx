@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Table from "react-bootstrap/Table";
 import { LeaderboardContext } from "../App";
+import { useAuth } from "../components/AuthContext";
 
 const Leaderboard = () => {
   const { leaderboardData } = useContext(LeaderboardContext);
@@ -9,8 +10,24 @@ const Leaderboard = () => {
     (a, b) => a.moveCount - b.moveCount
   );
 
+  const {userData} = useAuth()
+
+  const grabSession = async () => {
+    try {
+      await fetch("http://localhost:3000/some-route");
+      console.log('session is active');
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+  const grabUser = () => {
+    console.log(userData)
+  };
+
   return (
     <div>
+      <button onClick={grabSession}>session ?</button>
+      <button onClick={grabUser}>User ?</button>
       Leaderboard
       <Table striped bordered hover>
         <thead>

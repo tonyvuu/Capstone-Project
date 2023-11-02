@@ -9,11 +9,12 @@ export const useAuth = () => {
 
 const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [username, setUsername] = useState("");
+  const [userData, setUserData] = useState(null)
 
-  const login = (username) => {
+  const login = (user) => {
     setIsAuthenticated(true);
-    setUsername(username);
+    // setUsername(username);
+    setUserData(user)
   };
 
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const AuthProvider = ({ children }) => {
       await fetch("http://localhost:3000/logout");
       console.log("Logout Successful");
       setIsAuthenticated(false);
-      setUsername("");
+      setUserData(null);
       navigate("/login");
     } catch (error) {
       console.error("Logout error:", error);
@@ -31,7 +32,7 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, username, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, userData, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

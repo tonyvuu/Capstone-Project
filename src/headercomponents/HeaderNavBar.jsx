@@ -7,7 +7,7 @@ import "../styles/HeaderNavBar.css";
 import { useAuth } from "../components/AuthContext";
 
 const HeaderNavBar = () => {
-  const { isAuthenticated, username, logout } = useAuth();
+  const { isAuthenticated, userData, logout } = useAuth();
 
   return (
     <div className="header-nav-bar">
@@ -33,7 +33,7 @@ const HeaderNavBar = () => {
             )}
             {isAuthenticated && (
               <div>
-                Welcome, {username}
+                Welcome, {userData.firstName}
                 <button onClick={logout}>Logout</button>
               </div>
             )}

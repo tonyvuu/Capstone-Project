@@ -106,7 +106,12 @@ app.post("/login", async (req, res) => {
       req.session.userID = returningUser.id; // Store the user's ID in the session
 
       console.log("Sign in successful");
-      res.status(200).json({ username }); // Return the username to the client
+      console.log(req.session);
+      console.log(req.session.username );
+      console.log(req.session.userID );
+      console.log(req.session.isAuthenticated );
+
+      res.status(200).json({ returningUser }); // Return the username to the client
       // res.send({returningUser})
     } else {
       return res.status(401).json({ error: "Invalid username or password" });
