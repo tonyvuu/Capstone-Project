@@ -22,3 +22,15 @@
     border-top-left-radius: 7px;
     border-bottom: white;
 }
+
+/* mobile */
+@media screen and (max-width: 620px) {
+    .nav-item {
+        padding: 5px 0;
+        margin: 0 20px;
+        text-align: center;
+    }
+    .nav-link2 {
+        font-size: 20px;
+    }
+  }

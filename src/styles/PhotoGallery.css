@@ -42,9 +42,9 @@ div {
     /* background-color: black; */
     backdrop-filter: brightness(20%);
 }
-.modalBody {
-    /* width: 100vw; */
-}
+/* .modalBody {
+    width: 100vw;
+} */
 
 .thumbnail.active {
     border: 2px solid orange
