@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
-import {Button, InputGroup} from "react-bootstrap";
+import { Button, InputGroup } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import AnswerAttempts from "./AnswerAttempts";
-import { PlayerAttemptsContext } from "../App";
+import MoveCount from "./MoveCount";
+import { MoveCountContext } from "../App";
+import '../styles/AnswerComponent.css'
 
 const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
   const [inputValue, setInputValue] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
-  const { updateAttempts } = useContext(PlayerAttemptsContext)
+  const { updateMoveCount } = useContext(MoveCountContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,26 +20,28 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
   };
 
   return (
-    <div>
-    <Form onSubmit={handleSubmit}>
+    <div className="answer-component">
+      <div className="move-count-container">
+        <MoveCount />
+      </div>
+      <Form onSubmit={handleSubmit} className="custom-input-form">
         <InputGroup className="mb-3 custom-input-group">
-        <Form.Control
-          className="custom-input" 
-          type="text"
-          placeholder={placeholder}
-          value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-            setShowErrorMessage(false);
-          }}
-        />
-        {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
-      <Button className="custom-button" type="submit" onClick={() => updateAttempts(1)}>
-        Submit
-      </Button>
-      </InputGroup>
-    </Form>
-    <AnswerAttempts />
+          <Form.Control
+            className="custom-input"
+            type="text"
+            placeholder={placeholder}
+            value={inputValue}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+              setShowErrorMessage(false);
+            }}
+          />
+          {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
+          <Button className="custom-button1" type="submit" onClick={() => updateMoveCount(1)}>
+            Submit
+          </Button>
+        </InputGroup>
+      </Form>
     </div>
   );
 };

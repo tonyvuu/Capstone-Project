@@ -73,11 +73,11 @@ const PhotoModal = ({ show, onClose }) => {
                 interval={null} // Disable auto-play
               >
                 {images.map((image, index) => (
-                  <Carousel.Item style={{height:'80vh'}} key={index}>
+                  <Carousel.Item style={{ height: "80vh" }} key={index}>
                     <img
                       src={image}
                       alt={`Image ${index + 1}`}
-                      style={{ width: "100%", height:'auto'}}
+                      style={{ width: "100%", height: "auto" }}
                     />
                   </Carousel.Item>
                 ))}

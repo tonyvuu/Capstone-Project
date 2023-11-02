@@ -1,0 +1,27 @@
+.answer-component {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .move-count-container {
+    display: flex;
+    margin-right: 5px; 
+    justify-content: right;
+  }
+  
+  .custom-input-form {
+    flex: 1;
+  }
+  
+  .custom-button1{
+    background-color: #ff6a00;
+  }
+
+  .custom-button1:hover {
+    background-color: red;
+  }
+  .custom-button1:active {
+    background-color: #ff6a00 !important; 
+  }
+  

@@ -4,14 +4,14 @@ import Button from 'react-bootstrap/Button';
 import helicopter from '../assets/Helicopter.jpeg';
 import '../styles/Newspaper.css';
 
-const AlibiModal = ({ show, onClose }) => {
+const NewspaperModal = ({ show, onClose }) => {
   return (
     <Modal show={show} onHide={onClose} size="xl">
       <Modal.Header closeButton>
       </Modal.Header>
-      <Modal.Body>
+      <Modal.Body className='newspaper-modal-body'>
         <div className="newspaper-container custom-width">
-          <h1 className="header">Alibis</h1>
+          <h1 className="header">DAILY NEWS</h1>
           <br />
           <h2 className='sub-header'>A 26-year-old advocate was tragically murdered, while her twin sister was abducted from a cabin house in DevTown</h2>
           <p className="author">
@@ -70,7 +70,7 @@ const AlibiModal = ({ show, onClose }) => {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
+        <Button className="custom-button" onClick={onClose}>
           Close
         </Button>
       </Modal.Footer>
@@ -78,4 +78,4 @@ const AlibiModal = ({ show, onClose }) => {
   );
 };
 
-export default AlibiModal;
+export default NewspaperModal;

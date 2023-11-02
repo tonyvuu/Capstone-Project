@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "./AuthContext";
+import { useAuth } from "../components/AuthContext";
+import '../styles/Login.css'
 
 const Login = () => {
   const [loginInfo, setLoginInfo] = useState({
@@ -35,7 +36,7 @@ const Login = () => {
       if (response.status === 200) {
         // Login was successful
         const user = await response.json();
-        console.log('Login Succesful')
+        console.log("Login Successful");
         login(user.username);
         navigate("/");
       } else {
@@ -47,16 +48,16 @@ const Login = () => {
   };
 
   return (
-    <div>
-      {/* <button onClick={redirect}>Test Redirect</button> */}
+    <div className="login-page"> 
+      <div className="login-container">
 
-      <h1>Login</h1>
+      <h2>Login</h2>
       <Form onSubmit={(e) => handleLogin(e)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Email or Username"
+            placeholder="Enter email"
             name="email"
             value={email}
             onChange={(e) => inputChange(e)}
@@ -67,16 +68,19 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Password"
+            placeholder="Enter password"
             name="password"
             value={password}
             onChange={(e) => inputChange(e)}
           />
         </Form.Group>
         <Button className="custom-button" type="submit">
-          Submit
+          Sign in 
         </Button>
       </Form>
+      <br />
+        <p className="forgot-password">Forgot your password?</p>
+      </div>
     </div>
   );
 };

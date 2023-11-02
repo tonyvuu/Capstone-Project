@@ -26,7 +26,12 @@
   color: white; 
   border: none; 
 }
-
 .custom-button:hover {
-  background-color: red; 
+  background-color: red;
 }
+.custom-button:active {
+  background-color: #ff6a00 !important; 
+}
+
+
+
