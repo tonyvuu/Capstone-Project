@@ -15,7 +15,8 @@
     color: white;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
-  }
+    margin-bottom: 350px;
+}
   
 .login-container h2 {
     text-align: center;
