@@ -14,3 +14,22 @@
 .image-title{
 margin-right: 8px;
 }
+
+
+/* mobile */
+@media screen and (max-width: 620px) {
+    .navbar {
+        display: block;
+    }
+    .navbar-title-icon {
+        font-size: x-large;
+    }
+    .registration-login {
+        justify-content: center;
+    }
+    .header-nav-bar {
+        width: 100%;
+        margin: auto;
+        /* margin-bottom: -20px; */
+    }
+  }

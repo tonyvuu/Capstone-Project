@@ -4,6 +4,7 @@ import Step1 from "../components/Step1";
 import Timer from "./Timer";
 import detective from "../assets/detective.png";
 import "../styles/TitleScreen.css";
+import CluesTabs from "../cluescomponents/CluesTabs";
 
 const TitleScreen = () => {
   const [showStep1, setShowStep1] = useState(false);
@@ -11,6 +12,7 @@ const TitleScreen = () => {
 
   return (
     <div className="title-container">
+      <CluesTabs />
       <div className="image-container">
         <img className="detective" src={detective} alt="Detective" />
       </div>

@@ -36,7 +36,6 @@ function App() {
           <MoveCountContext.Provider value={{ moveCount, updateMoveCount }}>
             <div>
               <HeaderNavBar />
-              <CluesTabs />
               <Routes>
                 <Route path="/" element={<TitleScreen />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />
