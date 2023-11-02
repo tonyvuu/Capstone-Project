@@ -8,7 +8,7 @@ const CompletionBar = () => {
 
   return (
     <div>
-      <ProgressBar className = "bar" now={progress} label={`${progress}%`} />
+      <ProgressBar className = "bar" animated now={progress} label={`${progress}%`} />
     </div>
   );
 }
