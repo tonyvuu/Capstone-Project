@@ -7,8 +7,10 @@ const CompletionBar = () => {
   const { progress } = useContext(CompletionBarContext);
 
   return (
-    <div>
-      <ProgressBar className = "bar" animated now={progress} label={`${progress}%`} />
+    <div className="d-flex justify-content-end"> 
+      <h6 style={{ marginRight: '10px' }}>Story Progress</h6> 
+
+      <ProgressBar variant="success" className="custom-progress-bar" animated now={progress} />
     </div>
   );
 }

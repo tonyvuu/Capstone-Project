@@ -6,6 +6,7 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: black;
+  background: url("./assets/rain-drizzle.gif") repeat;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,6 +26,7 @@ a:hover {
 
 body {
   background-color: black;
+  background: url("./assets/rain-drizzle.gif") repeat; /* 
 }
 
 h1 {
