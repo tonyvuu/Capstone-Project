@@ -25,3 +25,14 @@
     background-color: #ff6a00 !important; 
   }
   
+
+/* mobile */
+@media screen and (max-width: 620px) {
+  .answer-component {
+    display: block;
+    width: 100%;
+  }
+  .custom-input-group {
+    width: 100%;
+  }
+}

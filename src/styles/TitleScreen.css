@@ -47,3 +47,8 @@
   background: black 
 }
 
+@media screen and (max-width: 620px) {
+  .index-module_type__E-SaG {
+   font-size: 1.25em !important;
+ }
+}

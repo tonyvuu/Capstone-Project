@@ -17,7 +17,7 @@
 }
 
 .custom-input-group {
-  width: 650px; 
+  width: 100%; 
   margin-left: auto;
 }
 
@@ -32,6 +32,5 @@
 .custom-button:active {
   background-color: #ff6a00 !important; 
 }
-
 
 
