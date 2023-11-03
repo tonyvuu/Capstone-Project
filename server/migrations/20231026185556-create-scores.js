@@ -28,16 +28,6 @@ module.exports = {
       score: {
         type: Sequelize.INTEGER
       },
-      username: {
-        type: Sequelize.STRING,
-        references: {
-          model: "Users",
-          key: "username"
-        },
-        allowNull: false,
-        onUpdate: "CASCADE",
-        onDelete: "CASCADE"
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

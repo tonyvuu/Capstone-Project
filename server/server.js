@@ -55,12 +55,15 @@ app.post("/register", async (req, res) => {
   }
 
   console.log("Body: ", req.body);
-  const { firstName, lastName, username, email, password } = req.body;
+  const { firstName, lastName, email, password, reenterpassword } = req.body;
   const existingUser = await Users.findOne({ where: { email: email } });
 
   if (existingUser) {
     console.error("Email already exists");
     return res.status(409).json({ error: "Email already exists" });
+  } else if (reenterpassword !== password) {
+    console.error("Passwords do not match");
+    return res.status(409).json({ error: "Passwords do not match" });
   }
 
   bcrypt.hash(password, saltRounds, async (err, hash) => {
@@ -74,9 +77,9 @@ app.post("/register", async (req, res) => {
       const newUser = await Users.create({
         firstName: firstName,
         lastName: lastName,
-        username: username,
         email: email,
         password: hash,
+        reenterpassword: hash
       });
       res.json({ message: `User created successfully: ${newUser}` });
       console.log(`User created successfully: ${newUser}`);
