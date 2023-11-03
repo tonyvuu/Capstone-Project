@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Container, Row, Card } from 'react-bootstrap';
 import '../styles/Characters.css'
 
-const CharacterInfoModal = ({ show, onClose, characterName, characterDescription, characterHeight, characterWeight }) => {
+const CharacterInfoModal = ({ show, onClose, characterName, characterDescription, characterHeight, characterWeight, characterAlias }) => {
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton>
@@ -13,6 +13,7 @@ const CharacterInfoModal = ({ show, onClose, characterName, characterDescription
       <Modal.Body>
         <p><b>Height:</b> {characterHeight}</p>
         <p><b>Weight:</b> {characterWeight}</p>
+        <p><b>Alias:</b> {characterAlias}</p>
         <p>{characterDescription}</p>
       </Modal.Body>
       <Modal.Footer>
@@ -29,15 +30,17 @@ const NewspaperModal = ({ show, onClose }) => {
     name: '',
     description: '',
     height: '',
-    weight: ''
+    weight: '',
+    alias:''
   });
 
-  const handleCharacterClick = (name, description, height, weight) => {
+  const handleCharacterClick = (name, description, height, weight, alias) => {
     setCharacterInfo({
       name,
       description,
       height,
-      weight
+      weight,
+      alias
     });
   };
 
@@ -80,9 +83,9 @@ const NewspaperModal = ({ show, onClose }) => {
 const characters = [
   {
     name: 'John McKinsey (step-husband)',
-    height: '5"7',
-    weight: '130',
-    description: 'Description for John McKinsey',
+    height: '5"10',
+    weight: '165',
+    description: 'No criminal record - \n\n hello',
     image: 'https://media.istockphoto.com/id/168266792/photo/portrait-of-a-man.jpg?s=612x612&w=0&k=20&c=UTjxul8rFDkqZ7UDr8n2E33ggEzShIm8Q_hr5peXjU0=',
   },
   {
@@ -140,6 +143,13 @@ const characters = [
     weight: '130',
     description: 'Description for Officer Paul',
     image: 'https://media.istockphoto.com/id/536195589/photo/portrait-of-a-police-officer.jpg?s=612x612&w=0&k=20&c=57aqTIv86a22tHhowmVgIqZK4psSO54RWtUeJuwXuys=',
+  },
+  {
+    name: 'Marty Carter',
+    height: '5"7',
+    weight: '130',
+    description: 'Description for Marty Carter',
+    image: 'https://media.istockphoto.com/id/494480935/photo/young-professional-female-in-technical-field.jpg?s=612x612&w=0&k=20&c=TA-KA1f4Bn4WMJWET17y7mq1X0sNhgNUyELVW57KSqU=',
   }
   // Add more character objects here
 ];
