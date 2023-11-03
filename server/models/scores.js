@@ -14,16 +14,12 @@ module.exports = (sequelize, DataTypes) => {
       Scores.belongsTo(models.Users, {
         foreignKey: "user_id"
       });
-      Scores.belongsTo(models.Users, {
-        foreignKey: "username"
-      });
     }
   }
   Scores.init({
     score_id: DataTypes.INTEGER,
     user_id: DataTypes.INTEGER,
-    score: DataTypes.INTEGER,
-    username: DataTypes.STRING
+    score: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Scores',

@@ -26,9 +26,9 @@ module.exports = {
       report_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Criminal_Records",
+          model: "Police_Reports",
           key: "id",
-          as: "record_id"
+          as: "report_id"
         },
         allowNull: false
       },

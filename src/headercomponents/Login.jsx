@@ -37,7 +37,12 @@ const Login = () => {
         // Login was successful
         const user = await response.json();
         console.log("Login Successful");
-        login(user.username);
+        // const firstName = user.returningUser.firstName;
+        // const lastName = user.returningUser.lastName;
+        // const username = user.returningUser.username;
+        // const user_id = user.returningUser.user_id
+        login(user.returningUser);
+        console.log(user)
         navigate("/");
       } else {
         console.error("Login failed");

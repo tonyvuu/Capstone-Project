@@ -42,6 +42,10 @@ const CompletionScreen = () => {
     }
   };
 
+  const inputScore = () => {
+    
+  }
+
   useEffect(() => {
     const animationDuration = (finalText.length / speed) * 1000;
 
