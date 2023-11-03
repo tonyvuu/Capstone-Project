@@ -7,6 +7,7 @@ import { TypeAnimation } from "react-type-animation";
 import { CompletionBarContext } from '../App';
 import { MoveCountContext } from '../App' ;
 import CompletionBar from './CompletionBar';
+import GameOver from "./GameOver";
 
 const Step1 = () => {
   const [isCorrect, setIsCorrect] = useState(false);
@@ -53,6 +54,7 @@ const Step1 = () => {
 
       {/* {isCorrect && <CompletionScreen moveCount = {moveCount} />} */}
       {isCorrect && <Step2 />}
+      <GameOver />
       
     </div>
   );
