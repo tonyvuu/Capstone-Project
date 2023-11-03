@@ -79,7 +79,7 @@ app.post("/register", async (req, res) => {
         lastName: lastName,
         email: email,
         password: hash,
-        reenterpassword: hash
+        reenterpassword: hash,
       });
       res.json({ message: `User created successfully: ${newUser}` });
       console.log(`User created successfully: ${newUser}`);
@@ -110,9 +110,9 @@ app.post("/login", async (req, res) => {
 
       console.log("Sign in successful");
       console.log(req.session);
-      console.log(req.session.username );
-      console.log(req.session.userID );
-      console.log(req.session.isAuthenticated );
+      console.log(req.session.username);
+      console.log(req.session.userID);
+      console.log(req.session.isAuthenticated);
 
       res.status(200).json({ returningUser }); // Return the username to the client
       // res.send({returningUser})
@@ -134,6 +134,56 @@ app.get("/logout", (req, res) => {
     console.log("Logout Successful");
     res.status(200).json({ message: "Logged out" });
   });
+});
+
+app.get("/scoresTable", async (req, res) => {
+  const allScores = await Scores.findAll();
+  console.log("Scores should be sent");
+  res.send(allScores);
+});
+app.get("/usersTable", async (req, res) => {
+  const allUsers = await Users.findAll();
+  console.log("Users");
+  res.send(allUsers);
+});
+app.get("/user", async (req, res) => {
+  const { user_id } = req.body;
+
+  const user = await Users.findOne({ where: { user_id: user_id } });
+  console.log(user_id, user.highScore);
+  res.send(user);
+});
+
+app.post("/addScore", async (req, res) => {
+  const { user_id, score } = req.body;
+  const user = await Users.findOne({ where: { user_id: user_id } });
+  const newScore = await Scores.create({
+    user_id,
+    score,
+  });
+  const allScores = await Scores.findAll();
+  // Update User's High Score
+  if (score < user.highScore) {
+    await Users.update({ highScore: score }, { where: { user_id: user_id } });
+  }
+  res.status(201).json({
+    message: "Score added successfully",
+    data: newScore,
+    user,
+    allScores,
+  });
+});
+
+app.get("/getHighScores", async (req, res) => {
+  const highScores = await Users.findAll({
+    where: {
+      highScore: {
+        [sequelize.Op.not]: null,
+      },
+    },
+    order: [["highScore", "asc"]],
+  });
+  res.send(highScores);
 });
 
 app.listen(port, () => {
