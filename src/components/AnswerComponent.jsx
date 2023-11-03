@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { Button, InputGroup } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import MoveCount from "./MoveCount";
 import { MoveCountContext } from "../App";
 import '../styles/AnswerComponent.css'
 
@@ -22,7 +21,7 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
   return (
     <div className="answer-component">
       <div className="move-count-container">
-        <MoveCount />
+        {/* <MoveCount /> */}
       </div>
       <Form onSubmit={handleSubmit} className="custom-input-form">
         <InputGroup className="mb-3 custom-input-group">
@@ -36,11 +35,11 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
               setShowErrorMessage(false);
             }}
           />
-          {showErrorMessage && <p className="text-danger">Incorrect answer</p>}
           <Button className="custom-button1" type="submit" onClick={() => updateMoveCount(1)}>
             Submit
           </Button>
         </InputGroup>
+        {showErrorMessage && <p className="text-danger">Wrong answer</p>}
       </Form>
     </div>
   );
