@@ -62,3 +62,7 @@
 .terms-policy {
     font-size: 13px; 
   }
+
+  .error {
+    color: red;
+  }
