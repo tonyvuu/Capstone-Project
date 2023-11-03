@@ -11,7 +11,7 @@ const TitleScreen = () => {
       <div className="image-container">
         <img className="antique" src={antique} alt="Antique" />
       </div>
-      <h2>
+      <h2 className="blah">
       Enter into the Dev Town Murder Mystery. It's a challenging puzzle where you'll solve the riddles to unravel the secrets. Can you expose the culprit before time runs out?
       </h2>
       <br />
