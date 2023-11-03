@@ -28,32 +28,34 @@
 // export default Timer;
 
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom"; // Import useHistory from React Router
+import { useNavigate } from "react-router-dom";
 
 const Timer = () => {
-  const [time, setTime] = useState(30 * 60);
-  const history = useHistory(); // Access the history object
+  const [time, setTime] = useState(.1 * 60);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (time > 0) {
         setTime(time - 1);
       } else {
-        clearInterval(interval); // Stop the timer
-        history.push("/gameover"); // Redirect to the "Game Over" screen
+        clearInterval(interval);
+        navigate("/gameover");
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [time, history]);
+  }, [time, navigate]);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
 
-  const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+  const formattedTime = `${minutes.toString().padStart(2, "0")}:${seconds
+    .toString()
+    .padStart(2, "0")}`;
 
   return (
-    <div>
+    <div className="timer">
       <h1>{formattedTime}</h1>
     </div>
   );

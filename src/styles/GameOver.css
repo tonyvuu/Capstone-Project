@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,200&family=Roboto+Slab:wght@400;500&display=swap');
+
+
+.content-container{
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Roboto Serif', serif;
+}
+
+.sub-text {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+  }
+  
+  .sub-text-inner {
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  
+  .fade-in {
+    opacity: 1;
+  }

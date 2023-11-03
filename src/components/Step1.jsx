@@ -54,7 +54,7 @@ const Step1 = () => {
 
       {/* {isCorrect && <CompletionScreen moveCount = {moveCount} />} */}
       {isCorrect && <Step2 />}
-      <GameOver />
+      {/* <GameOver /> */}
       
     </div>
   );
