@@ -15,7 +15,7 @@ const Registration = () => {
 
   const navigate = useNavigate();
 
-  const { firstName, lastName, username, email, password } = newUser;
+  const { firstName, lastName , email, password } = newUser;
 
   const handleRegister = async (e) => {
     e.preventDefault();
