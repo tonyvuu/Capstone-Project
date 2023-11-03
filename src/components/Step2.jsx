@@ -12,7 +12,7 @@ const Step2 = () => {
 
   const text = `Manti was very close to solving the case. There was a footage of him leaving his house outside where he screamed, "I THINK I SOLVED THE CASE!" He immediately ran to his car and drove away. However, he went missing the next following day. Manti left his notebook behind on the investigation. It is up to you to look for clues and details in his notebook that will help guide towards solving the mystery.\n\nThe game has 3 objectives\n• Find the accomplice\n• Identify the killer\n• Bonus \n\nList of valuable information such as time, interviews, and descriptions of the crime scene needs to be retained in order to progress through the story`;
 
-  const speed = 95;
+  const speed = 100;
 
   useEffect(() => {
     const animationDuration = (text.length / speed) * 1000;
