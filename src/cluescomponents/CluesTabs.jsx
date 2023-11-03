@@ -55,13 +55,13 @@ const CluesTabs = () => {
           </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link2" onClick={openPhotoModal}>
-            Photo Gallery
+          <div className="nav-link2" onClick={openAlibiModal}>
+            Alibi
           </div>
         </Nav.Item>
         <Nav.Item>
-          <div className="nav-link2" onClick={openAlibiModal}>
-            Alibi
+          <div className="nav-link2" onClick={openPhotoModal}>
+            Photo Gallery
           </div>
         </Nav.Item>
       </Nav>

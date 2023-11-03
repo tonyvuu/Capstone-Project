@@ -6,16 +6,16 @@ import HeaderNavBar from "./headercomponents/HeaderNavBar";
 import Leaderboard from "./headercomponents/Leaderboard";
 import Login from "./headercomponents/Login";
 import Registration from "./headercomponents/Registration";
-import CluesTabs from "./cluescomponents/CluesTabs";
 import TitleScreen from "./components/TitleScreen";
 import AuthProvider from "./components/AuthContext";
+import GameScreen from "./components/GameScreen";
 
 export const LeaderboardContext = createContext();
 export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
 
 function App() {
-  const [progress, setProgress] = useState(5);
+  const [progress, setProgress] = useState(1);
   const [moveCount, setMoveCount] = useState(0);
   const [leaderboardData, setLeaderboardData] = useState([]);
 
@@ -41,6 +41,7 @@ function App() {
                 <Route path="/leaderboard" element={<Leaderboard />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
+                <Route path="/game" element={<GameScreen />} />
               </Routes>
             </div>
           </MoveCountContext.Provider>
