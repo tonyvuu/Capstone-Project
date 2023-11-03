@@ -4,12 +4,13 @@ import { useLeaderboard } from "../headercomponents/LeaderboardContext";
 import { useAuth } from "../components/AuthContext";
 
 const LeaderboardTable = () => {
-    const {sortedLeaderboard} = useLeaderboard()
+    const {sortedLeaderboard, sortLeaderboard} = useLeaderboard()
+
+    
   return (
     <div>
-      {/* <button onClick={grabSession}>session ?</button>
-      <button onClick={grabUser}>User ?</button> */}
-      Leaderboard
+      {/* <button onClick={() => console.log(sortLeaderboard)}>session ?</button> */}
+      <h1>Leaderboard</h1>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -19,11 +20,11 @@ const LeaderboardTable = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedLeaderboard.map((entry, index) => (
+          {sortedLeaderboard.map((score, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>Detective {entry.name}</td>
-              <td>{entry.moveCount}</td>
+              <td>Detective {score.firstName}</td>
+              <td>{score.highScore}</td>
             </tr>
           ))}
         </tbody>

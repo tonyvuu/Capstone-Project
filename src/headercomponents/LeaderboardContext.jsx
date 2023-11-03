@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
 import { useAuth } from "../components/AuthContext";
 
 
@@ -16,6 +16,17 @@ const LeaderboardProvider = ({children}) => {
   const sortedLeaderboard = leaderboardData.sort(
     (a, b) => a.moveCount - b.moveCount
   );
+
+  useEffect(() => {
+    sortLeaderboard()
+  },[]);
+
+  const sortLeaderboard = async() => {
+    const response = await fetch("http://localhost:3000/getHighScores");
+    const data = await response.json()
+    setLeaderboardData(data)
+    console.log(data)
+  }
 
   const {userData} = useAuth()
 
@@ -36,7 +47,7 @@ const LeaderboardProvider = ({children}) => {
   }
 
   return (
-    <LeaderboardContext.Provider value={{ leaderboardData, setLeaderboardData, sortedLeaderboard }}>
+    <LeaderboardContext.Provider value={{ leaderboardData, setLeaderboardData, sortedLeaderboard, sortLeaderboard }}>
       {children}
     </LeaderboardContext.Provider>
   );
