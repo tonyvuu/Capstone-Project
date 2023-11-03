@@ -17,7 +17,7 @@ const TitleScreen = () => {
       <br />
       <Link to="/game">
         <Button size="lg" className="custom-button">
-          Play
+          START GAME
         </Button>
       </Link>{" "}
     </div>
