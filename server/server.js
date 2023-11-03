@@ -55,12 +55,15 @@ app.post("/register", async (req, res) => {
   }
 
   console.log("Body: ", req.body);
-  const { firstName, lastName, username, email, password } = req.body;
+  const { firstName, lastName, email, password, reenterpassword } = req.body;
   const existingUser = await Users.findOne({ where: { email: email } });
 
   if (existingUser) {
     console.error("Email already exists");
     return res.status(409).json({ error: "Email already exists" });
+  } else if (reenterpassword !== password) {
+    console.error("Passwords do not match");
+    return res.status(409).json({ error: "Passwords do not match" });
   }
 
   bcrypt.hash(password, saltRounds, async (err, hash) => {
@@ -74,9 +77,9 @@ app.post("/register", async (req, res) => {
       const newUser = await Users.create({
         firstName: firstName,
         lastName: lastName,
-        username: username,
         email: email,
         password: hash,
+        reenterpassword: hash
       });
       res.json({ message: `User created successfully: ${newUser}` });
       console.log(`User created successfully: ${newUser}`);
@@ -106,7 +109,12 @@ app.post("/login", async (req, res) => {
       req.session.userID = returningUser.id; // Store the user's ID in the session
 
       console.log("Sign in successful");
-      res.status(200).json({ username }); // Return the username to the client
+      console.log(req.session);
+      console.log(req.session.username );
+      console.log(req.session.userID );
+      console.log(req.session.isAuthenticated );
+
+      res.status(200).json({ returningUser }); // Return the username to the client
       // res.send({returningUser})
     } else {
       return res.status(401).json({ error: "Invalid username or password" });

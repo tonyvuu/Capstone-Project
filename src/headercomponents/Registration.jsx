@@ -8,14 +8,14 @@ const Registration = () => {
   const [newUser, setNewUser] = useState({
     firstName: "",
     lastName: "",
-    username: "",
     email: "",
     password: "",
+    reenterpassword: ""
   });
 
   const navigate = useNavigate();
 
-  const { firstName, lastName , email, password } = newUser;
+  const { firstName, lastName, email, password, reenterpassword } = newUser;
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -32,9 +32,9 @@ const Registration = () => {
     setNewUser({
       firstName: "",
       lastName: "",
-      username: "",
       email: "",
       password: "",
+      reenterpassword: ""
     });
     navigate("/login");
   };
@@ -95,8 +95,8 @@ const Registration = () => {
           <Form.Label>Re-enter password</Form.Label>
           <Form.Control
             type="password"
-            name="password"
-            value={password}
+            name="reenterpassword"
+            value={reenterpassword}
             placeholder="Re-enter password"
             onChange={(e) => inputChange(e)}
           />
