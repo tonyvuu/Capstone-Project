@@ -15,7 +15,7 @@ export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
 
 function App() {
-  const [progress, setProgress] = useState(5);
+  const [progress, setProgress] = useState(1);
   const [moveCount, setMoveCount] = useState(0);
   const [leaderboardData, setLeaderboardData] = useState([]);
 
