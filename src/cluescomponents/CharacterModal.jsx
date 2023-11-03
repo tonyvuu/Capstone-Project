@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Container, Row, Card } from 'react-bootstrap';
 import '../styles/Characters.css'
 
-const CharacterInfoModal = ({ show, onClose, characterName, characterDescription, characterHeight, characterWeight }) => {
+const CharacterInfoModal = ({ show, onClose, characterName, characterDescription, characterHeight, characterWeight, characterAlias }) => {
   return (
     <Modal show={show} onHide={onClose}>
       <Modal.Header closeButton>
@@ -13,6 +13,7 @@ const CharacterInfoModal = ({ show, onClose, characterName, characterDescription
       <Modal.Body>
         <p><b>Height:</b> {characterHeight}</p>
         <p><b>Weight:</b> {characterWeight}</p>
+        <p><b>Alias:</b> {characterAlias}</p>
         <p>{characterDescription}</p>
       </Modal.Body>
       <Modal.Footer>
@@ -29,15 +30,17 @@ const NewspaperModal = ({ show, onClose }) => {
     name: '',
     description: '',
     height: '',
-    weight: ''
+    weight: '',
+    alias:''
   });
 
-  const handleCharacterClick = (name, description, height, weight) => {
+  const handleCharacterClick = (name, description, height, weight, alias) => {
     setCharacterInfo({
       name,
       description,
       height,
-      weight
+      weight,
+      alias
     });
   };
 
@@ -82,7 +85,7 @@ const characters = [
     name: 'John McKinsey (step-husband)',
     height: '5"10',
     weight: '165',
-    description: 'No criminal record - ',
+    description: 'No criminal record - \n\n hello',
     image: 'https://media.istockphoto.com/id/168266792/photo/portrait-of-a-man.jpg?s=612x612&w=0&k=20&c=UTjxul8rFDkqZ7UDr8n2E33ggEzShIm8Q_hr5peXjU0=',
   },
   {

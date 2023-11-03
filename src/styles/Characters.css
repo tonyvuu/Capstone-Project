@@ -43,7 +43,10 @@
 }
 .italic-text {
     font-style: italic;
-  }
+}
+.container{
+    margin-left: 20px;
+}
 
 @media screen and (max-width: 620px) {
     .character-card {
@@ -56,6 +59,9 @@
         height: 300px; 
         object-fit: cover; 
     }
-  }
+    .container{
+        margin: 0;
+    }
+}
 
 
