@@ -41,8 +41,8 @@ const Step2 = () => {
       <br/>
       {showForm && (
         <AnswerComponent
-          placeholder="Look for clues and identify how many key evidence you found"
-          correctAnswer="2"
+          placeholder='Are you ready to tackle on the investigation? (type "yes" to continue)'
+          correctAnswer="yes"
           onCorrectAnswer={handleCorrectAnswer}
         />
       )}
