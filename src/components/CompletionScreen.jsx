@@ -3,12 +3,12 @@ import '../styles/Step1.css';
 import { TypeAnimation } from 'react-type-animation';
 import { CompletionBarContext } from '../App';
 import { MoveCountContext } from '../App';
-import { LeaderboardContext } from '../App';
+import { useLeaderboard } from "../headercomponents/LeaderboardContext";
 
 const CompletionScreen = () => {
   const { updateProgress } = useContext(CompletionBarContext);
   const { moveCount } = useContext(MoveCountContext);
-  const { leaderboardData, setLeaderboardData } = useContext(LeaderboardContext);
+  const { leaderboardData, setLeaderboardData } = useLeaderboard();
 
   const text = `Congratulations! You have found the killer in ${moveCount} moves!`;
 
