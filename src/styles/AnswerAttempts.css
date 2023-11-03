@@ -1,15 +1,16 @@
 .answer-attempts-container {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    align-items: center;
 }
 
 .attempts { 
+    align-items: center;
     text-align: center;
-    padding: 20px;
     width: 100%;
-    border-radius: 10px;
     color: white;
+    padding-left: 10px;
+    margin-top: 8px;
 }
 
 .attempts-number { 
@@ -17,16 +18,11 @@
     font-weight: bold;
 }
 
-.buttons { 
-    margin-top: 10px; 
-}
 
 @media (max-width: 768px) { 
     .answer-attempts-container { 
         flex-direction: column; 
     }
 
-    .attempts { 
-        margin-bottom: 20px; 
-    } 
+
 } 
