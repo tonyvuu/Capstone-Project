@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Table from "react-bootstrap/Table";
 import { useLeaderboard } from "../headercomponents/LeaderboardContext";
 import { useAuth } from "../components/AuthContext";
+import "../styles/Leaderboard.css"
 
 const LeaderboardTable = () => {
     const {sortedLeaderboard, sortLeaderboard} = useLeaderboard()
@@ -20,11 +21,11 @@ const LeaderboardTable = () => {
           </tr>
         </thead>
         <tbody>
-          {sortedLeaderboard.map((score, index) => (
+          {sortedLeaderboard.map((user, index) => (
             <tr key={index}>
               <td>{index + 1}</td>
-              <td>Detective {score.firstName}</td>
-              <td>{score.highScore}</td>
+              <td className="leaderboard-name">Detective {user.firstName}</td>
+              <td>{user.highScore}</td>
             </tr>
           ))}
         </tbody>
