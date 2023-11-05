@@ -32,10 +32,12 @@ const HeaderNavBar = () => {
               </>
             )}
             {isAuthenticated && (
-              <div>
-                Welcome, {userData.firstName}
-                <button onClick={logout}>Logout</button>
-              </div>
+              <p className="session-name">
+                Welcome, 
+                <span className="detective-name">Detective </span>
+                <span className="name-only">{userData.firstName}</span>
+                <button className="user-button" onClick={logout}>Logout</button>
+              </p>
             )}
           </Nav>
         </Navbar>

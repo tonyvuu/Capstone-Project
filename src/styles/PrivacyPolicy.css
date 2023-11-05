@@ -1,0 +1,22 @@
+.privacy-policy {
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: 'News Cycle', sans-serif;
+
+  }
+  
+  .privacy-policy h1, .privacy-policy h2 {
+    color: #ff6a00;
+  }
+  
+  .privacy-policy p {
+    margin-bottom: 20px;
+  }
+  
+  .privacy-policy ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
