@@ -79,7 +79,6 @@ const CompletionScreen = () => {
 
   return (
     <div>
-      <button onClick={() => console.log(newScore) }>Test</button>
       <div className="story-text">
         <TypeAnimation
           sequence={[finalText]}
