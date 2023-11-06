@@ -29,7 +29,7 @@ const TitleScreen = () => {
         <img className="antique" src={antique} alt="Antique" />
       </div>
       <h2 className="blah">
-      Welcome to the Dev Town Case Files. It's a challenging puzzle where you'll solve the riddles to unravel the secrets. Can you expose the culprit before time runs out?
+      Welcome to the Dev Town Case Files. It's a challenging case where you'll solve the riddles to unravel the secrets. Can you expose the culprit before time runs out?
       </h2>
       <br />
       {isAuthenticated ? (

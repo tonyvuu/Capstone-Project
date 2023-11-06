@@ -9,6 +9,7 @@ export const useLeaderboard = () => {
 
 const LeaderboardProvider = ({ children }) => {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const [updatedLeaderboard, setUpdatedLeaderboard] = useState(false)
 
   const sortedLeaderboard = leaderboardData.sort(
     (a, b) => a.moveCount - b.moveCount
