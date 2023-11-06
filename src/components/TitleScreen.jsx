@@ -7,9 +7,9 @@ import { useAuth } from "./AuthContext";
 
 const TitleScreen = () => {
   const { isAuthenticated, userData } = useAuth();
-  const [userAttempts, setUserAttempts] = useState({
-    user_id: null,
-  });
+  // const [userAttempts, setUserAttempts] = useState({
+  //   user_id: null,
+  // });
 
   const navigate = useNavigate();
 
@@ -20,27 +20,7 @@ const TitleScreen = () => {
     navigate("/login");
   };
   const enterGame = async (e) => {
-    try {
-      setUserAttempts({
-        user_id: userData.user_id,
-      });
-      console.log(userData.user_id)
-      const response = await fetch("http://localhost:3000/addAttempt", {
-        method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(userAttempts),
-      });
-      if (!response.ok) {
-        console.error("Fetch error:", response.status, response.statusText);
-      } else {
-        console.log(userData);
         navigate("/game");
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
   };
 
   return (

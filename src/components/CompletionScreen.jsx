@@ -72,7 +72,6 @@ const CompletionScreen = () => {
 
     const timeoutId = setTimeout(() => {
       updateProgress(0); 
-      setShowForm(true);
     }, animationDuration);
 
     return () => clearTimeout(timeoutId);

@@ -80,7 +80,7 @@ app.post("/register", async (req, res) => {
         email: email,
         password: hash,
         reenterpassword: hash,
-        attempts: 0
+        attempts: 0,
       });
       res.json({ message: `User created successfully: ${newUser}` });
       console.log(`User created successfully: ${newUser}`);
@@ -158,15 +158,20 @@ app.get("/user", async (req, res) => {
 app.post("/addScore", async (req, res) => {
   const { user_id, score } = req.body;
   const user = await Users.findOne({ where: { user_id: user_id } });
+  const attempts = user.attempts;
   const newScore = await Scores.create({
     user_id,
     score,
   });
   const allScores = await Scores.findAll();
   // Update User's High Score
-  if (score > user.highScore) {
+  if (score < user.highScore || user.highScore == null) {
     await Users.update({ highScore: score }, { where: { user_id: user_id } });
   }
+  await Users.update(
+    { attempts: attempts + 1 },
+    { where: { user_id: user_id } }
+  );
   res.status(201).json({
     message: "Score added successfully",
     data: newScore,
@@ -195,10 +200,10 @@ app.put("/addAttempt", async (req, res) => {
     { attempts: attempts + 1 },
     { where: { user_id: user_id } }
   );
-  res.status(201).json({ 
+  res.status(201).json({
     message: "Attempt added successfully",
-    data: `Attempts: ${attempts + 1}`
- });
+    data: `Attempts: ${attempts + 1}`,
+  });
 });
 
 app.listen(port, () => {
