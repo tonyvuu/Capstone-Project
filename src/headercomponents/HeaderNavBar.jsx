@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import logo from "../assets/icon_hacker.png";
+import logo from "../assets/Icon_hacker.png";
 import "../styles/HeaderNavBar.css";
 import { useAuth } from "../components/AuthContext";
 
