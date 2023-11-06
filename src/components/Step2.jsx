@@ -10,15 +10,15 @@ const Step2 = () => {
   const [showForm, setShowForm] = useState(false);
   const { updateProgress } = useContext(CompletionBarContext);
 
-  const text = `Manti was very close to solving the case. There was a footage of him leaving his house outside where he screamed, "I THINK I SOLVED THE CASE!" He immediately ran to his car and drove away. However, he went missing the next following day. Manti left his notebook behind on the investigation. It is up to you to look for clues and details in his notebook that will help guide towards solving the mystery.\n\nThe game has 3 objectives\n• Find the accomplice\n• Identify the killer\n• Bonus \n\nList of valuable information such as time, interviews, and descriptions of the crime scene needs to be retained in order to progress through the story`;
+  const text = "Morgan was very close to solving the case. There was footage of him leaving his house outside where he screamed, 'I THINK I SOLVED THE CASE!' He immediately ran to his car and drove away. However, he went missing the following day. Morgan left his notebook behind on the investigation. It is up to you to look for clues and details in his notebook that will help towards solving the mystery.\n\nThe game has 2 objectives:\n• Find the accomplice\n• Identify the killer";
 
-  const speed = 95;
+  const speed = 100;
 
   useEffect(() => {
     const animationDuration = (text.length / speed) * 1000;
 
     const timeoutId = setTimeout(() => {
-      setShowForm(true); 
+      setShowForm(true);
     }, animationDuration);
 
     return () => clearTimeout(timeoutId);
@@ -38,11 +38,11 @@ const Step2 = () => {
           style={{ fontSize: '1.5em', whiteSpace: 'pre-line' }}
         />
       </div>
-      <br/>
+      <br />
       {showForm && (
         <AnswerComponent
-          placeholder="Look for clues and identify how many key evidence you found"
-          correctAnswer="2"
+          placeholder="Which twin is deceased?"
+          correctAnswer="makenna"
           onCorrectAnswer={handleCorrectAnswer}
         />
       )}

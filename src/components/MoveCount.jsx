@@ -7,7 +7,7 @@ const MoveCount = () => {
   return (
     <div className="answer-attempts-container">
       <div className="attempts">
-        <h3>Moves - {moveCount}</h3>
+        <h5>Moves: {moveCount}</h5>
         
 
       </div>

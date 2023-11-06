@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link } from "react-router-dom";
-import logo from "../assets/icon_hacker.png";
+import logo from "../assets/Icon_hacker.png";
 import "../styles/HeaderNavBar.css";
 import { useAuth } from "../components/AuthContext";
 
@@ -32,10 +32,12 @@ const HeaderNavBar = () => {
               </>
             )}
             {isAuthenticated && (
-              <div>
-                Welcome, {userData.firstName}
-                <button onClick={logout}>Logout</button>
-              </div>
+              <p className="session-name">
+                Welcome, 
+                <span className="detective-name">Detective </span>
+                <span className="name-only">{userData.firstName}</span>
+                <button className="user-button" onClick={logout}>Logout</button>
+              </p>
             )}
           </Nav>
         </Navbar>

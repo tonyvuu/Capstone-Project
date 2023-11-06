@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "../styles/Registration.css";
-// import Alert from 'react-bootstrap/Alert';
+
 
 const Registration = () => {
   const [newUser, setNewUser] = useState({
@@ -13,72 +13,92 @@ const Registration = () => {
     password: "",
     reenterpassword: "",
   });
+
   const [passwordError, setPasswordError] = useState("");
   const [emailError, setEmailError] = useState("");
+  const [firstNameError, setFirstNameError] = useState("");
+  const [lastNameError, setLastNameError] = useState("");
 
   const navigate = useNavigate();
-
 
   const { firstName, lastName, email, password, reenterpassword } = newUser;
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
     if (reenterpassword !== password) {
       const passwordInput = document.getElementById("formBasicPassword");
       const reenterpasswordInput = document.getElementById("formBasicReenterPassword");
       const passwordLabel = document.getElementById("password-label");
       const reenterpasswordLabel = document.getElementById("reenterpassword-label");
-      
+
       setPasswordError("Passwords do not match");
       passwordInput.style.border = "1px solid red";
       reenterpasswordInput.style.border = "1px solid red";
-      passwordLabel.style.color = "red"
-      reenterpasswordLabel.style.color = "red"
-
-      setTimeout(() => {
-        setPasswordError("");
-        // passwordInput.style.border = "1px solid #555";
-        // reenterpasswordInput.style.border = "1px solid #555";
-        // passwordLabel.style.color = "#ff6a00"
-        // reenterpasswordLabel.style.color = "#ff6a00"
-      }, 2500);
+      passwordLabel.style.color = "red";
+      reenterpasswordLabel.style.color = "red";
       return;
     }
 
-    try {
-      const response = await fetch("http://localhost:3000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
+    if (firstName.length < 2 || firstName.length > 30) {
+      setFirstNameError("First name should be between 2 and 30 characters");
+      return;
+    } else {
+      setFirstNameError("");
+    }
+
+    if (!/^[A-Za-z]+$/.test(firstName)) {
+      setFirstNameError("First name should only contain letters");
+      return;
+    } else {
+      setFirstNameError("");
+    }
+
+    if (lastName.length < 2 || lastName.length > 30) {
+      setLastNameError("Last name should be between 2 and 30 characters");
+      return;
+    } else {
+      setLastNameError("");
+    }
+
+    if (!/^[A-Za-z]+$/.test(lastName)) {
+      setLastNameError("Last name should only contain letters");
+      return;
+    } else {
+      setLastNameError("");
+    }
+    if (email.trim() === "") {
+      setEmailError("Email address cannot be empty");
+      return;
+    } else {
+      setEmailError("");
+    }
+
+    const response = await fetch("http://localhost:3000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
+
+    if (!response.ok) {
+      setEmailError("Email already exists");
+      const emailInput = document.getElementById("formBasicEmail");
+      const emailLabel = document.getElementById("email-label");
+      emailInput.style.borderColor = "red";
+      emailLabel.style.color = "red";
+
+      console.error("Fetch error:", response.status, response.statusText);
+    } else {
+      setNewUser({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: "",
+        reenterpassword: "",
       });
-
-      if (!response.ok) {
-        setEmailError("Email already exists")
-        const emailInput = document.getElementById("formBasicEmail");
-        const emailLabel = document.getElementById("email-label");
-        emailInput.style.borderColor = "red";
-        emailLabel.style.color = "red";
-        
-        setTimeout(() => {
-          setEmailError("")
-        }, 2500);
-
-        console.error("Fetch error:", response.status, response.statusText);
-
-      } else {
-        setNewUser({
-          firstName: "",
-          lastName: "",
-          email: "",
-          password: "",
-          reenterpassword: "",
-        });
-        navigate("/login");
-      }
-    } catch (error) {
-      console.error("Error:", error);
+      navigate("/login");
     }
   };
 
@@ -101,6 +121,7 @@ const Registration = () => {
               placeholder="Enter first name"
               onChange={(e) => inputChange(e)}
             />
+            {firstNameError && <div className="error">{firstNameError}</div>}
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicLastName">
             <Form.Label>Last Name</Form.Label>
@@ -111,12 +132,8 @@ const Registration = () => {
               placeholder="Enter last name"
               onChange={(e) => inputChange(e)}
             />
+            {lastNameError && <div className="error">{lastNameError}</div>}
           </Form.Group>
-          {emailError && (
-            <h6 style={{ textAlign: "center" }} className="error">
-              {emailError}
-            </h6>
-          )}
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label id="email-label">Email address</Form.Label>
             <Form.Control
@@ -127,14 +144,15 @@ const Registration = () => {
               onChange={(e) => inputChange(e)}
             />
           </Form.Group>
-          {passwordError && (
+          {emailError && (
             <h6 style={{ textAlign: "center" }} className="error">
-              {passwordError}
+              {emailError}
             </h6>
           )}
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label id="password-label">Password</Form.Label>
             <Form.Control
+              minLength={6}
               type="password"
               name="password"
               value={password}
@@ -142,10 +160,10 @@ const Registration = () => {
               onChange={(e) => inputChange(e)}
             />
           </Form.Group>
-
           <Form.Group className="mb-3" controlId="formBasicReenterPassword">
             <Form.Label id="reenterpassword-label">Re-enter password</Form.Label>
             <Form.Control
+              minLength={6}
               type="password"
               name="reenterpassword"
               value={reenterpassword}
@@ -153,6 +171,11 @@ const Registration = () => {
               onChange={(e) => inputChange(e)}
             />
           </Form.Group>
+          {passwordError && (
+            <h6 style={{ textAlign: "center" }} className="error">
+              {passwordError}
+            </h6>
+          )}
           <Button className="custom-button" type="submit">
             Sign up
           </Button>
@@ -160,8 +183,14 @@ const Registration = () => {
         <br />
         <p className="terms-policy">
           By signing up, you agree to our{" "}
-          <span className="terms">Terms of Service</span> and{" "}
-          <span className="terms">Privacy Policy</span>.
+          <Link to="/termsofservice" target="_blank" className="terms">
+            Terms of Service
+          </Link>{" "}
+          and{" "}
+          <Link to="/privacypolicy" target="_blank" className="terms">
+            Privacy Policy
+          </Link>
+          .
         </p>
       </div>
     </div>

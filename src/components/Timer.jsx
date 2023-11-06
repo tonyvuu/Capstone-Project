@@ -1,17 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Timer = () => {
-  const [time, setTime] = useState(30 * 60);
+  const [time, setTime] = useState(45 * 60);
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (time > 0) {
         setTime(time - 1);
+      } else {
+        clearInterval(interval);
+        navigate("/gameover");
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [time]);
+  }, [time, navigate]);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -20,9 +25,12 @@ const Timer = () => {
     .toString()
     .padStart(2, "0")}`;
 
-  return <div>
-    <h1>{formattedTime}</h1>
-  </div>;
+  return (
+    <div className="timer">
+      <h1>{formattedTime}</h1>
+    </div>
+  );
 };
 
 export default Timer;
+

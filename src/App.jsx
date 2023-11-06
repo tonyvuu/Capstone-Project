@@ -10,6 +10,9 @@ import TitleScreen from "./components/TitleScreen";
 import AuthProvider from "./components/AuthContext";
 import GameScreen from "./components/GameScreen";
 import LeaderboardTable from "./components/LeaderboardTable"
+import GameOver from "./components/GameOver";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
 
 export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
@@ -39,6 +42,10 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/registration" element={<Registration />} />
                 <Route path="/game" element={<GameScreen />} />
+                <Route path="/gameover" element={<GameOver />} />
+                <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                <Route path="/termsofservice" element={<TermsOfService />} />
+
               </Routes>
             </div>
           </MoveCountContext.Provider>

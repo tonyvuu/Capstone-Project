@@ -1,0 +1,21 @@
+.terms-of-service {
+    text-align: left;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: 'News Cycle', sans-serif;
+  }
+  
+  .terms-of-service h1, .terms-of-service h2 {
+    color: #ff6a00;
+  }
+  
+  .terms-of-service p {
+    margin-bottom: 20px;
+  }
+  
+  .terms-of-service ul {
+    list-style: disc;
+    margin-left: 20px;
+  }
+  
