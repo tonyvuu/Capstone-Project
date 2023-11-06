@@ -15,7 +15,8 @@ const HeaderNavBar = () => {
         <Navbar variant="dark">
           <Navbar.Brand className="navbar-title-icon" as={Link} to="/">
             <img className="image-title" src={logo} alt="Dev Town Logo" />
-                DevTown Murder Mystery{" "}
+                {/* DevTown Murder Mystery{" "} */}
+                Dev Town Case Files{" "}
           </Navbar.Brand>
           <Nav className="registration-login right-align">
             <Nav.Link as={Link} to="/leaderboard">
@@ -24,7 +25,7 @@ const HeaderNavBar = () => {
             {!isAuthenticated && (
               <>
                 <Nav.Link as={Link} to="/registration">
-                  Sign up
+                  Register
                 </Nav.Link>
                 <Nav.Link as={Link} to="/login">
                   Login

@@ -4,16 +4,16 @@ import '../styles/TermsOfService.css'
 function TermsOfService() {
   return (
     <div className="terms-of-service">
-      <h1>Terms of Service for Devtown Murder Mystery</h1>
+      <h1>Terms of Service for Dev Town Case Files</h1>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
-        By using Devtown Murder Mystery, you agree to comply with and be bound by these Terms of Service.
+        By using Dev Town Case Files, you agree to comply with and be bound by these Terms of Service.
       </p>
 
       <h2>2. Eligibility</h2>
       <p>
-        You must be at least 13 years old to use our game. If you are under 13, please do not use the game.
+        You must be at least 13 years old to play our game. If you are under 13, please do not play the game.
       </p>
 
       <h2>3. User Conduct</h2>

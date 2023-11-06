@@ -10,7 +10,7 @@ const Step5 = () => {
   const [showForm, setShowForm] = useState(false);
   const { updateProgress } = useContext(CompletionBarContext);
 
-  const text = "* RING RING * \n-You picked up a phone call from Officer Paul \n\nYou: Hello?\n\nOfficer Paul: Hey, you asked for me? I personally know Zach Bash and you should be careful around him. \n\nYou: Why?\n\n Officer Paul: He pretends to be dumb is actually very smart and dangerous. \n\nYou: Thanks for the information officer.\n\n Officer Paul: Want me to join you for a interview? \n\nYou: It's okay officer, I will take care of it myself. Also, can you please tell me any extra details on him if anything comes up? \n\nOfficer Paul: Yeah, I'll do that. Good luck. \n\n We need to figure out who is the girl with the drawn-in evil smile and horn..";
+  const text = "* RING RING * \n-You picked up a phone call from Officer Paul \n\nYou: Hello?\n\nOfficer Paul: Hey, you asked for me? I personally know Zach Bash and you should be careful around him. \n\nYou: Why?\n\n Officer Paul: He pretends to be dumb but is actually very smart and dangerous. \n\nYou: Thanks for the information officer.\n\n Officer Paul: Want me to join you for a interview? \n\nYou: It's okay officer, I will take care of it myself. Also, can you please tell me any extra details on him if anything comes up? \n\nOfficer Paul: Yeah, I'll do that. Good luck. \n\n We need to figure out who is the girl with the drawn-in evil smile and horns..";
 
   const speed = 100;
 
@@ -41,7 +41,7 @@ const Step5 = () => {
       <br/>
       {showForm && (
         <AnswerComponent
-          placeholder="What phrase is associated with the drawn-in evil smile and horn?"
+          placeholder="Find a phrase for the evil smile & horns?"
           correctAnswer="devil on my shoulders"
           onCorrectAnswer={handleCorrectAnswer}
         />

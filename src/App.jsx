@@ -13,6 +13,7 @@ import LeaderboardTable from "./components/LeaderboardTable"
 import GameOver from "./components/GameOver";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import Timer from './components/Timer'
 
 export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
@@ -32,8 +33,8 @@ function App() {
   return (
     <AuthProvider>
       <LeaderboardProvider>
-        <CompletionBarContext.Provider value={{ progress, updateProgress }}>
-          <MoveCountContext.Provider value={{ moveCount, updateMoveCount }}>
+        <CompletionBarContext.Provider value={{ progress, updateProgress, setProgress }}>
+          <MoveCountContext.Provider value={{ moveCount, updateMoveCount, setMoveCount }}>
             <div>
               <HeaderNavBar />
               <Routes>
