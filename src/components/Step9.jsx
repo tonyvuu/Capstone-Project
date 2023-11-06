@@ -5,7 +5,7 @@ import { TypeAnimation } from 'react-type-animation';
 import { CompletionBarContext } from '../App';
 import AnswerComponent from './AnswerComponent';
 
-const Step5 = () => {
+const Step9 = () => {
   const [isCorrect, setIsCorrect] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const { updateProgress } = useContext(CompletionBarContext);
@@ -52,4 +52,4 @@ const Step5 = () => {
   );
 };
 
-export default Step5;
+export default Step9;

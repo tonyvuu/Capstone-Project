@@ -14,12 +14,12 @@ const NewspaperModal = ({ show, onClose }) => {
           <h1 className="header">DAILY NEWS</h1>
           <i className='newspaper-date'>January 2, 2009</i>
           <br />
-          <h2 className='sub-header'>A 26-year-old advocate was tragically murdered, while her twin sister was abducted from a cabin house in DevTown</h2>
+          <h2 className='sub-header'>A 26-year-old advocate was tragically murdered, while her twin sister was abducted from a beach house in DevTown</h2>
           <p className="author">
             By Stephanie Li<br />
             <i className='writer'>Staff Writer for the Devtown Daily</i>
           </p>
-          <p className='paragraph-text'>Today, our local community is in a state of shock and heightened vigilance due to a distressing incident that occurred in the early hours. In this tragic event, a 26-year-old woman from DevTown lost her life, and her twin sister is currently missing. At around 4:30 am this morning, McKenna Doe contacted 911 to report a home invasion at their family's cabin in DevTown. During the incident, she and her twin sister, Toni, were the only occupants of the residence located on Marsh Lagoon. McKenna informed the 911 operator that an unknown intruder had forcibly entered their home, restrained her sister, and posed a threat to her before the call abruptly disconnected.</p>
+          <p className='paragraph-text'>Today, our local community is in a state of shock and heightened vigilance due to a distressing incident that occurred in the early hours. In this tragic event, a 26-year-old woman from DevTown lost her life, and her twin sister is currently missing. At around 4:30 am this morning, McKenna Doe contacted 911 to report a home invasion at their family's beach house in DevTown. During the incident, she and her twin sister, Toni, were the only occupants of the residence located on Marsh Lagoon. McKenna informed the 911 operator that an unknown intruder had forcibly entered their home, restrained her sister, and posed a threat to her before the call abruptly disconnected.</p>
           <div className="missing-girl-container">
             <img src="https://image1.masterfile.com/getImage/NzAwLTAwMDMzMzA2ZW4uMDAwMDAwMDA=AGbv2G/700-00033306en_Masterfile.jpg" alt="missing girl" className="news-image" />
             <div className="missing-girl-text">

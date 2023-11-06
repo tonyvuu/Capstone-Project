@@ -5,6 +5,8 @@ import Carousel from "react-bootstrap/Carousel";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import "../styles/PhotoGallery.css";
+import drawnJen from '../assets/drawnJen.png'
+import pictureCard from '../assets/photohidden.png'
 
 const PhotoModal = ({ show, onClose }) => {
   const [showCarousel, setShowCarousel] = useState(false);
@@ -18,23 +20,51 @@ const PhotoModal = ({ show, onClose }) => {
   const closeCarousel = () => {
     setShowCarousel(false);
   };
-
+  
   const handleSelect = (selectedIndex) => {
     setCurrentIndex(selectedIndex);
   };
-
+  
   const images = [
-    "https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2023/10/30/3815800-77567928-2560-1440.jpg",
-    "https://imageio.forbes.com/specials-images/imageserve/6426b75cec3c2cd0b18cd6f5/Lionel-Messi-could-return-to-FC-Barcelona-when-he-retires-/960x0.jpg?format=jpg&width=960",
-    "https://media.npr.org/assets/img/2023/06/07/ap23158571300352-8bf00455d3333eb01468ea9493463a56833a8c99-s1100-c50.jpg",
-    "https://images.mlssoccer.com/image/private/t_editorial_landscape_8_desktop_mobile/v1694099334/mls-atl-prd/ltjnt7l52vmpx1m8v7fy.jpg",
-    "https://i2-prod.mirror.co.uk/incoming/article29508499.ece/ALTERNATES/s1200b/0_Lionel-Messi-29.jpg",
-    "https://assets.goal.com/v3/assets/bltcc7a7ffd2fbf71f5/blt51f0cc9752931881/639ded71fa9530798c2329ba/messi-ears-16-9.jpg?auto=webp&format=pjpg&width=3840&quality=60",
-    "https://imageio.forbes.com/specials-images/imageserve/64de87334a6ec38d5ad8ae21/Lionel-Messi-has-confessed-that-he-never-wanted-to-leave-FC-Barcelona-/960x0.jpg?format=jpg&width=960",
-    "https://cdn.vox-cdn.com/thumbor/bhbwAkgIXCCrwNyEF1p25zuX8u8=/0x0:4282x2854/1200x800/filters:focal(1028x350:1712x1034)/cdn.vox-cdn.com/uploads/chorus_image/image/66347468/1198181971.jpg.0.jpg",
-    "https://www.usatoday.com/gcdn/presto/2022/12/18/USAT/077897d0-ad51-4235-8d9d-05982e10ca69-messijube.jpg",
-  ];
+    "https://www.alabamavacationhomerentals.com/images/w.1280/h.853/c.1/mr.0/d.listing_photos/sd.2022-01/i.20e27602dcc990bff4cc4c1cd16ab8c4.jpg",
 
+    "https://media.istockphoto.com/id/175390830/photo/bloody-hand-at-an-accident-scene-pavement.jpg?s=612x612&w=0&k=20&c=mYiV5adxGh6YAVk1bsJgQpeRqgJKP8XdBmQj3byhYUA=",
+
+    drawnJen,
+    
+
+    "https://upload.wikimedia.org/wikipedia/commons/c/cc/Police_Line_Crime_Scene_2498847226.jpg",
+
+    
+    "https://i.pinimg.com/originals/00/af/be/00afbe23659e2844e26eb728c165b371.jpg",
+    
+    "https://media.istockphoto.com/id/106540127/photo/brick-building-with-a-law-office-sign.jpg?s=612x612&w=0&k=20&c=uRCvitcU5CT4Rh4ufVPFv1x60qrNbM-hsj94uTo2zyI=",
+    
+    "https://www.wework.com/ideas/wp-content/uploads/sites/4/2020/06/Web_150DPI-20171111-WeWork-Vine-Exteriors-Entrance-1_header-1120x630.jpg",
+    
+    "https://media.istockphoto.com/id/1360819778/photo/in-the-close-up-are-billiard-balls-while-in-the-background-is-a-group-of-people-playing.jpg?s=612x612&w=0&k=20&c=u-65tlMv6HzCBRh9RnHmIECmk1blDQRj_UlBj7VGkX4=",
+    
+    "https://media.istockphoto.com/id/1428934243/photo/playing-game-of-pool-and-drinking-beer-with-friends-in-local-pool-hall.jpg?s=612x612&w=0&k=20&c=FzvuDyf6Qg5BFuOxGeRecPdDDeT7UoNWCvipQZ55To8=",
+    
+    "https://c8.alamy.com/comp/2JG36XW/summer-heat-bearded-adult-man-in-work-overalls-wiping-sweat-from-his-forehead-sunny-backyard-and-sky-at-the-backgroud-gardening-and-horticulture-co-2JG36XW.jpg",
+    
+    "https://www.baltimoresun.com/resizer/iUjm49AuXZqwdTvAywVx5VJFJko=/1200x630/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/tronc/WQWG6BETINE3HJO52ZHNOTIYTA.jpg",
+    
+    
+    "https://media.swncdn.com/via/8435-istockgetty-images-plusyakobchukolena-1.jpg",
+    
+    "https://images.toledocitypaper.com/wp-content/uploads/2022/08/image000001.jpg",
+    
+    "https://live.staticflickr.com/1894/43769563244_46b5fd0520_b.jpg", 
+    
+    "https://i.pinimg.com/736x/c4/df/12/c4df1275652525495f67803995b81448.jpg",
+    
+    pictureCard,
+    "https://chicagohealthonline.com/wp-content/uploads/2014/09/DrugAisle.png",
+    
+    "https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/white-jeep-4x4-parked-on-a-cliff-with-a-beach-in-the-background-cavan-images.jpg"
+  ];
+  
   return (
     <>
       <Modal className="galleryModal" show={show} onHide={onClose} size="xl">
