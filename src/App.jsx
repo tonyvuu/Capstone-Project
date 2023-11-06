@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link, Outlet } from "react-router-dom";
 import HeaderNavBar from "./headercomponents/HeaderNavBar";
 import Leaderboard from "./headercomponents/Leaderboard";
 import Login from "./headercomponents/Login";
@@ -35,10 +35,11 @@ function App() {
       <LeaderboardContext.Provider
         value={{ leaderboardData, setLeaderboardData }}
       >
-        <CompletionBarContext.Provider value={{ progress, updateProgress }}>
-          <MoveCountContext.Provider value={{ moveCount, updateMoveCount }}>
+        <CompletionBarContext.Provider value={{ progress, updateProgress, setProgress }}>
+          <MoveCountContext.Provider value={{ moveCount, updateMoveCount, setMoveCount }}>
             <div>
               <HeaderNavBar />
+              <Outlet />
               <Routes>
                 <Route path="/" element={<TitleScreen />} />
                 <Route path="/leaderboard" element={<Leaderboard />} />

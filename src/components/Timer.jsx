@@ -1,9 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { CompletionBarContext, MoveCountContext } from "../App";
 
 const Timer = () => {
-  const [time, setTime] = useState(45 * 60);
-  const navigate = useNavigate(); 
+  const { setProgress } = useContext(CompletionBarContext);
+  const { setMoveCount } = useContext(MoveCountContext);
+  const [time, setTime] = useState(0.3 * 60);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -11,12 +14,16 @@ const Timer = () => {
         setTime(time - 1);
       } else {
         clearInterval(interval);
+
+        setProgress(1);
+        setMoveCount(0);
+
         navigate("/gameover");
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [time, navigate]);
+  }, [time, navigate, setProgress, setMoveCount]);
 
   const minutes = Math.floor(time / 60);
   const seconds = time % 60;
@@ -33,4 +40,3 @@ const Timer = () => {
 };
 
 export default Timer;
-
