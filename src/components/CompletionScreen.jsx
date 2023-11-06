@@ -3,12 +3,16 @@ import '../styles/Step1.css';
 import { TypeAnimation } from 'react-type-animation';
 import { CompletionBarContext } from '../App';
 import { MoveCountContext } from '../App';
-import { LeaderboardContext } from '../App';
+import { useLeaderboard } from "../headercomponents/LeaderboardContext";
+import { useAuth } from './AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const CompletionScreen = () => {
   const { updateProgress } = useContext(CompletionBarContext);
   const { moveCount } = useContext(MoveCountContext);
-  const { leaderboardData, setLeaderboardData } = useContext(LeaderboardContext);
+  const { leaderboardData, setLeaderboardData } = useLeaderboard();
+  const {userData} = useAuth()
 
   const text = `Congratulations! You have found the killer in ${moveCount} moves!`;
 
@@ -27,23 +31,40 @@ const CompletionScreen = () => {
   const speed = 99;
   const [addedToLeaderboard, setAddedToLeaderboard] = useState(false);
   const [name, setName] = useState('');
+  const [newScore, setNewScore] = useState({
+    user_id: userData.user_id,
+    score: moveCount
+  });
+
+
 
   const handleNameChange = (event) => {
     setName(event.target.value);
   };
 
-  const handleSubmit = () => {
-    const ifEntryExists = leaderboardData.some((entry) => entry.name === name);
+  const navigate = useNavigate();
 
-    if (!ifEntryExists && !addedToLeaderboard && name) {
-      const newEntry = { name, moveCount };
-      setLeaderboardData([...leaderboardData, newEntry]);
-      setAddedToLeaderboard(true);
+  const inputScore = async() => {
+    // setNewScore({
+    //   user_id: userData.user_id,
+    //   score: moveCount
+    // })
+
+    const response = await fetch("http://localhost:3000/addScore", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newScore),
+    });
+    if (!response.ok) {
+      console.error("Fetch error:", response.status, response.statusText);
+    } else {
+      navigate("/leaderboard")
     }
-  };
 
-  const inputScore = () => {
-    
+
+
   }
 
   useEffect(() => {
@@ -51,7 +72,6 @@ const CompletionScreen = () => {
 
     const timeoutId = setTimeout(() => {
       updateProgress(0); 
-      setShowForm(true);
     }, animationDuration);
 
     return () => clearTimeout(timeoutId);
@@ -68,14 +88,14 @@ const CompletionScreen = () => {
       </div>
       <br />
 
-      <input
+      {/* <input
         type="text"
         placeholder="Enter your name"
         value={name}
         onChange={handleNameChange}
-      />
+      /> */}
       
-      <button onClick={handleSubmit}>Submit</button>
+      <Button className="custom-button" onClick={inputScore}>END</Button >
     </div>
   );
 };
