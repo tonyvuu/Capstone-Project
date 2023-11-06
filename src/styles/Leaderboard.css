@@ -1,19 +1,4 @@
-.leaderboard-table {
-    background-color: rgb(235, 15, 15);
+.white-text-black-bg {
     color: white;
-    font-family: "Your Desired Font", sans-serif; 
-  }
-
-.leaderboard-table th {
-    color: white; 
-    background-color: #333;
-}
-
-.leaderboard-table td {
-    color: white; 
-    background-color: #333;
-  }
-  
-.leaderboard-name {
-    font-weight: bold;
+    background-color: black;
 }

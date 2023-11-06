@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Table from "react-bootstrap/Table";
 import { LeaderboardContext } from "../App";
 import { useAuth } from "../components/AuthContext";
-import '../styles/Leaderboard.css'
+
 
 const Leaderboard = () => {
   const { leaderboardData } = useContext(LeaderboardContext);
@@ -37,7 +37,7 @@ const Leaderboard = () => {
         <thead>
           <tr>
             <th>Rank</th>
-            <th>Name</th>
+            <th >Name</th>
             <th>Moves</th>
           </tr>
         </thead>
