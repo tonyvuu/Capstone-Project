@@ -1,34 +1,32 @@
 import React, { useState, createContext, useContext, useEffect } from "react";
 import { useAuth } from "../components/AuthContext";
 
-
-
-const LeaderboardContext = createContext()
+const LeaderboardContext = createContext();
 
 export const useLeaderboard = () => {
-  return useContext(LeaderboardContext)
-}
+  return useContext(LeaderboardContext);
+};
 
-
-const LeaderboardProvider = ({children}) => {
+const LeaderboardProvider = ({ children }) => {
   const [leaderboardData, setLeaderboardData] = useState([]);
+  const [updatedLeaderboard, setUpdatedLeaderboard] = useState(false)
 
   const sortedLeaderboard = leaderboardData.sort(
     (a, b) => a.moveCount - b.moveCount
   );
 
   useEffect(() => {
-    sortLeaderboard()
-  },[]);
+    sortLeaderboard();
+  }, []);
 
-  const sortLeaderboard = async() => {
+  const sortLeaderboard = async () => {
     const response = await fetch("http://localhost:3000/getHighScores");
-    const data = await response.json()
-    setLeaderboardData(data)
-    console.log(data)
-  }
+    const data = await response.json();
+    setLeaderboardData(data);
+    console.log(data);
+  };
 
-  const {userData} = useAuth()
+  const { userData } = useAuth();
 
   // const grabSession = async () => {
   //   try {
@@ -42,12 +40,17 @@ const LeaderboardProvider = ({children}) => {
   //   console.log(userData)
   // };
 
-  const grabData = () => {
-    
-  }
+  const grabData = () => {};
 
   return (
-    <LeaderboardContext.Provider value={{ leaderboardData, setLeaderboardData, sortedLeaderboard, sortLeaderboard }}>
+    <LeaderboardContext.Provider
+      value={{
+        leaderboardData,
+        setLeaderboardData,
+        sortedLeaderboard,
+        sortLeaderboard,
+      }}
+    >
       {children}
     </LeaderboardContext.Provider>
   );

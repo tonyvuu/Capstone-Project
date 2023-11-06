@@ -11,8 +11,8 @@ import { Button } from 'react-bootstrap';
 const CompletionScreen = () => {
   const { updateProgress } = useContext(CompletionBarContext);
   const { moveCount } = useContext(MoveCountContext);
-  const { leaderboardData, setLeaderboardData } = useLeaderboard();
-  const {userData} = useAuth()
+  const {sortLeaderboard} = useLeaderboard();
+  const {userData} = useAuth();
 
   const text = `Congratulations! You have found the killer in ${moveCount} moves!`;
 
@@ -60,7 +60,8 @@ const CompletionScreen = () => {
     if (!response.ok) {
       console.error("Fetch error:", response.status, response.statusText);
     } else {
-      navigate("/leaderboard")
+      sortLeaderboard();
+      navigate("/leaderboard");
     }
 
 
@@ -101,3 +102,4 @@ const CompletionScreen = () => {
 };
 
 export default CompletionScreen;
+

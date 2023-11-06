@@ -11,7 +11,7 @@ const Login = () => {
     password: "",
   });
 
-  const [error, setError] = useState(""); // New state for error message
+  const [error, setError] = useState(""); 
 
   const navigate = useNavigate();
   const { login } = useAuth();

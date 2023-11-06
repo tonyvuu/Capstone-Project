@@ -4,7 +4,7 @@
   padding: 2rem;
   text-align: center;
   background-color: black;
-  background: url("./assets/rain-drizzle.gif") repeat; 
+  background: url("/rain-drizzle.gif") repeat; 
   color: white;
 }
 
