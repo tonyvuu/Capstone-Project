@@ -54,8 +54,8 @@ const Registration = () => {
       setTimeout(() => {
         setFirstNameError("");
       }, 2500);
-    } else if (!/^[A-Za-z]+$/.test(firstName)) {
-      setFirstNameError("First name should only contain letters");
+    } else if (!/^[A-Za-z]+( [A-Za-z]+)?$/.test(firstName)) {
+      setFirstNameError("First name should only contain letters and at most one space");
       setTimeout(() => {
         setFirstNameError("");
       }, 2500);
@@ -64,8 +64,8 @@ const Registration = () => {
       setTimeout(() => {
         setLastNameError("");
       }, 2500);
-    } else if (!/^[A-Za-z]+$/.test(lastName)) {
-      setLastNameError("Last name should only contain letters");
+    } else if (!/^[A-Za-z]+( [A-Za-z]+)?$/.test(lastName)) {
+      setLastNameError("Last name should only contain letters and at most one space");
       setTimeout(() => {
         setLastNameError("");
       }, 2500);
