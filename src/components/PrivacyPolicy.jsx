@@ -9,7 +9,7 @@ function PrivacyPolicy() {
 
       <h2>1. Introduction</h2>
       <p>
-        Welcome to Devtown Murder Mystery, a thrilling and interactive murder mystery game developed by [Your Company Name]. This Privacy Policy is designed to help you understand how we collect, use, and protect your personal information when you use our game.
+        Welcome to Devtown Murder Mystery, a thrilling and interactive murder mystery game developed by Devengers. This Privacy Policy is designed to help you understand how we collect, use, and protect your personal information when you use our game.
       </p>
 
       <h2>2. Information We Collect</h2>

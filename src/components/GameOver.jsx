@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "../styles/GameOver.css";
 import { TypeAnimation } from "react-type-animation";
+import { useNavigate } from "react-router-dom";
 
 const GameOver = () => {
+  const navigate = useNavigate();
+
+  const handleContinue = () => {
+    navigate("/game");
+  };
   const gameoverText = `GAME OVER`;
 
   const [showAdditionalText, setShowAdditionalText] = useState(false);
@@ -35,7 +41,8 @@ const GameOver = () => {
         <div className="sub-text">
           <div>
             <p>The killer has found you</p>
-            {/* <button>Continue</button> */}
+            <br></br>
+            <button onClick={handleContinue}>PLAY AGAIN</button>
           </div>
         </div>
       )}
