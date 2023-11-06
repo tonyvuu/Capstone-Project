@@ -1,9 +1,55 @@
-import React from 'react'
+import React, { useState, useContext, useEffect } from 'react';
+import Step7 from './Step7';
+import '../styles/Step1.css';
+import { TypeAnimation } from 'react-type-animation';
+import { CompletionBarContext } from '../App';
+import AnswerComponent from './AnswerComponent';
 
-const Step6 = () => {
+const Step5 = () => {
+  const [isCorrect, setIsCorrect] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const { updateProgress } = useContext(CompletionBarContext);
+
+  const text = `TWO MISSING VOICEMAILS\n\n6:40pm: Voicemail from Ellen Doe: \n\n"Just remembered calling a local gardening guy few weeks ago to do some work at the house. No one else besides Adam and Jen have been at the house recently. His name is Ethan Shulman.\n\n 7:10pm: Voicemail from Jen Doe:\n\n"Hey, I lied earlier about calling in sick to work. I actually bought a pregnancy test last night at the drugstore and took it in Marty's bathroom...turns out I'm pregnant. Don't tell my family please."`;
+
+  const speed = 100;
+
+  useEffect(() => {
+    const animationDuration = (text.length / speed) * 1000;
+
+    const timeoutId = setTimeout(() => {
+      setShowForm(true); 
+    }, animationDuration);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
+
+  const handleCorrectAnswer = () => {
+    setIsCorrect(true);
+    updateProgress(10);
+  };
+
   return (
-    <div>"911 Phone Transcript\nTime: 4:23am\nDuration: 1:53\nOperator - Tiffany Hannah \nCaller - Makenna Doe \n\nYou: Hello?\nOperator: 911, what's your emergency? \nCaller: (WHISPERING) Hello? \n This is 911 dispatch. What's your emergency? \nCaller: (MUFFLED NOISE).\n Operator: I'm sorry, you're going to have to speak up. How can I help you? \nCaller: (WHISPERING) There's... there's a guy in my house. We're getting robbed. I think. I'm not sure who he is. He's downstairs. I need police now! Please, can you help us?! \nOperator: What's your address, ma'am? \n Caller: Um.. I'm on Marsh Lagoon. Bourbon Drive, Um... number 1. In Morrow. \nOperator: That's number 1 Bourbon Drive in Morrow?\nCaller: (WHISPERING) Yeah. Can you send? How long is it going to...\nOperator: I'm sending police right now. I have a patrol car that should be there within a few minutes. What's your name, ma'am?\nCaller: (WHISPERING) Makenna Doe. My sister Toni's downstairs with him. She's tied up..\nOperator: How many people do you see? \nCaller: (WHISPERING) Just one. A man. He was ...um..wearing all black.\nOperator: Did you see a gun? Any weapons?\nCaller: (WHISPERING) No. I, I don't think so. I heard something and looked down the stairs and saw him and Toni in the living room. He was tying her up and he had, like, tape over her mouth. He was in all black, with a hood and gloves. That's all I saw. I think he saw me.\nOperator: Are you hiding, Makenna? Can you get under the bed or in a closet or...\nCaller: (WHISPERING) I'm in the closet.\n Operator: I have help coming right now, Makenna. What else did you see?\n Caller: (MUFFLED NOISE)\n Operator: Did you see anything else Makenna?\nCaller: (WHISPERING) I can hear him... He's coming up the stairs.\nOperator: Help is on the way, Makenna. There's a ...\nCaller: Shhh! \n\n (8 SECONDS OF SILENCE, FOLLOWED BY THE SOUND OF A DOOR OPENING, A WOMAN'S SCREAM, AND SOME MUFFLED NOISES) \n\nOperator: My god. Makenna, are you okay? Makenna? Are you there? \n\n(PHONE DISCONNECTS AT 4:25AM)" </div>
-  )
-}
+    <div>
+      <div className="story-text">
+        <TypeAnimation
+          sequence={[text]}
+          speed={speed}
+          style={{ fontSize: '1.5em', whiteSpace: 'pre-line' }}
+        />
+      </div>
+      <br/>
+      {showForm && (
+        <AnswerComponent
+          placeholder="Who is the accomplice?"
+          correctAnswer="adam doe"
+          onCorrectAnswer={handleCorrectAnswer}
+        />
+      )}
 
-export default Step6
+      {isCorrect && <Step7 />}
+    </div>
+  );
+};
+
+export default Step5;

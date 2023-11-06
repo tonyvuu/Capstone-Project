@@ -12,6 +12,7 @@ const NewspaperModal = ({ show, onClose }) => {
       <Modal.Body className='newspaper-modal-body'>
         <div className="newspaper-container custom-width">
           <h1 className="header">DAILY NEWS</h1>
+          <i className='newspaper-date'>January 2, 2009</i>
           <br />
           <h2 className='sub-header'>A 26-year-old advocate was tragically murdered, while her twin sister was abducted from a cabin house in DevTown</h2>
           <p className="author">
@@ -23,17 +24,17 @@ const NewspaperModal = ({ show, onClose }) => {
             <img src="https://image1.masterfile.com/getImage/NzAwLTAwMDMzMzA2ZW4uMDAwMDAwMDA=AGbv2G/700-00033306en_Masterfile.jpg" alt="missing girl" className="news-image" />
             <div className="missing-girl-text">
               <p className='paragraph-text2'>
-                When the police arrived, they found McKenna deceased inside the house, and neither her twin sister, Toni, nor the intruder was in sight. A statewide manhunt quickly ensued, involving roadblocks and additional personnel, including K-9 and helicopter units, as efforts were made to locate Toni and the assailant. At this moment, both remain missing. Leading the investigation for the DevTown Police Department is Homicide Detective Manti Fettuccine, who, during a morning press conference at the DevTown Police Station, expressed, "We have strong reasons to believe Toni Doe is still alive, and we're sparing no effort to reunite her with her already grieving family. I personally delivered the devastating news of McKenna's passing to her mother earlier today, and I'm determined not to have to do it again."
+                When the police arrived, they found McKenna deceased inside the house, and neither her twin sister, Toni, nor the intruder was in sight. A statewide manhunt quickly ensued, involving roadblocks and additional personnel, including K-9 and helicopter units, as efforts were made to locate Toni and the assailant. At this moment, both remain missing. Leading the investigation for the DevTown Police Department is Homicide Detective Morgan Wayne, who, during a morning press conference at the DevTown Police Station, expressed, "We have strong reasons to believe Toni Doe is still alive, and we're sparing no effort to reunite her with her already grieving family. I personally delivered the devastating news of McKenna's passing to her mother earlier today, and I'm determined not to have to do it again."
               </p>
             </div>
           </div>
           <div className='murder-mystery-container'>
             <div className="murder-mystery-text">
               <p className='paragraph-text'>
-                The Doe twins, who were born and raised in DevTown and graduated from DevTown High School two years ago, made a name for themselves during their time at CHS. They were recognized for shedding light on illicit drug activities in Forest Park Preserve. Always inseparable, the twins resided in DevTown with their mother, local zoologist Ellen Doe, and their stepfather, John McKinsey. Both McKenna and Toni were sophomore students enrolled in the Criminology Studies Program at Florida College. Before getting into college, they weren't your typical hero students. They had their fair trade of trouble but jokingly responded, "there was always a girl who was a 'devil on my shoulders'. "
+                The Doe twins, who were born and raised in DevTown and graduated from DevTown High School two years ago, made a name for themselves during their time at CHS. They were recognized for shedding light on illicit drug activities in Forest Park Preserve. Always inseparable, the twins resided in DevTown with their mother, local lawyer Ellen Doe, and their stepfather, John McKinsey. Both McKenna and Toni were sophomore students enrolled in the Criminology Studies Program at Florida College. Before getting into college, they weren't your typical hero students. They had their fair trade of trouble but jokingly responded, "there was always a girl who was a 'devil on my shoulders'. "
               </p>
               <br />
-              <p className='paragraph-text'>Detective Fettuccine remains optimistic about the search for Toni and stated, "We have promising leads in the case. We're determined to locate Toni and hold those responsible for today's events accountable. Our goal is to bring Toni back safely, and we're committed to solving this case together."</p>
+              <p className='paragraph-text'>Detective Morgan remains optimistic about the search for Toni and stated, "We have promising leads in the case. We're determined to locate Toni and hold those responsible for today's events accountable. Our goal is to bring Toni back safely, and we're committed to solving this case together."</p>
               <br />
               <p className='paragraph-text'>If you have any information on this time-senstive case, please call DevTown Police Tipline at (503) 333-5799. All tips and informants will kept strictly confidential.</p>
             </div>

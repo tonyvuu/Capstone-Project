@@ -160,6 +160,13 @@
   display: flex;
   flex-wrap: wrap; 
 }
+.newspaper-date{
+  justify-content: right;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  font-size: 12px;
+}
 
 
 
@@ -169,11 +176,11 @@
   .header::after {
   content: '';
   position: absolute;
-  background-color: #000; /* black lines */
-  height: 2px; /* line thickness */
-  width: 15%; /* line width */
-  top: 50%; /* position in the middle of the text */
-  transform: translateY(-50%); /* adjust vertical position */
+  background-color: #000; 
+  height: 2px; 
+  width: 15%;
+  top: 50%; 
+  transform: translateY(-50%); 
 }
   .header {
     font-size: 40px;

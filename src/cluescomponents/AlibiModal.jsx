@@ -142,7 +142,7 @@ const characters = [
     question5:"Who else knew they were there?",
     answer5:"Probably the weird neighbor that lives about 300 yards northeast of the beach house in the old shack. I can't recall his name.. but he is always peering around with his binoculars.",
     question6:"Can you tell me more about your neighbor?",
-    answer6:"He's actually a very big dude but I believe he is diagnosed with something. OH! I just remembered something; he told me he lived here for many years but was born in a mental institution. He makes me uncomfortable - I usually shoo him away if he gets close.",
+    answer6:"He's actually a very big dude but I believe he is diagnosed with something. OH! I just remembered something; he told me he lived here for many years but was born in a mental institution. He makes me uncomfortable - I usually shoo him away if he gets close. Think his name was z..zach?",
     image: 'https://media.istockphoto.com/id/168266792/photo/portrait-of-a-man.jpg?s=612x612&w=0&k=20&c=UTjxul8rFDkqZ7UDr8n2E33ggEzShIm8Q_hr5peXjU0=',
   },
   {
