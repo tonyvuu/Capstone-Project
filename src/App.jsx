@@ -1,7 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, createContext } from "react";
-import { Routes, Route, Link, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import HeaderNavBar from "./headercomponents/HeaderNavBar";
 import LeaderboardProvider from "./headercomponents/LeaderboardContext"
 import Login from "./headercomponents/Login";
@@ -13,6 +13,7 @@ import LeaderboardTable from "./components/LeaderboardTable"
 import GameOver from "./components/GameOver";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
+import Timer from './components/Timer'
 
 export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
@@ -36,7 +37,6 @@ function App() {
           <MoveCountContext.Provider value={{ moveCount, updateMoveCount, setMoveCount }}>
             <div>
               <HeaderNavBar />
-              <Outlet />
               <Routes>
                 <Route path="/" element={<TitleScreen />} />
                 <Route path="/leaderboard" element={<LeaderboardTable />} />

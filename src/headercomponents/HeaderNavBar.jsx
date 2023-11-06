@@ -25,7 +25,7 @@ const HeaderNavBar = () => {
             {!isAuthenticated && (
               <>
                 <Nav.Link as={Link} to="/registration">
-                  Sign up
+                  Register
                 </Nav.Link>
                 <Nav.Link as={Link} to="/login">
                   Login

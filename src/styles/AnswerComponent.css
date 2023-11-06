@@ -35,4 +35,7 @@
   .custom-input-group {
     width: 100%;
   }
+  .custom-input::placeholder {
+    font-size: 8px; /* Adjust the font size for mobile */
+  }
 }

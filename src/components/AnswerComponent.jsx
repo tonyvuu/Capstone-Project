@@ -20,9 +20,6 @@ const AnswerComponent = ({ placeholder, correctAnswer, onCorrectAnswer }) => {
 
   return (
     <div className="answer-component">
-      <div className="move-count-container">
-        {/* <MoveCount /> */}
-      </div>
       <Form onSubmit={handleSubmit} className="custom-input-form">
         <InputGroup className="mb-3 custom-input-group">
           <Form.Control

@@ -5,7 +5,7 @@ import { CompletionBarContext, MoveCountContext } from "../App";
 const Timer = () => {
   const { setProgress } = useContext(CompletionBarContext);
   const { setMoveCount } = useContext(MoveCountContext);
-  const [time, setTime] = useState(0.3 * 60);
+  const [time, setTime] = useState(45 * 60);
   const navigate = useNavigate();
 
   useEffect(() => {

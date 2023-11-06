@@ -41,8 +41,8 @@ const Step7 = () => {
       <br/>
       {showForm && (
         <AnswerComponent
-          placeholder="What evidence did you find to obtain a search warrant?"
-          correctAnswer="photo"
+          placeholder="What evidence was found to obtain a search warrant?"
+          correctAnswer="photos"
           onCorrectAnswer={handleCorrectAnswer}
         />
       )}
