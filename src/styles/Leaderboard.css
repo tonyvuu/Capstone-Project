@@ -1,4 +1,35 @@
-.white-text-black-bg {
-    color: white;
+.leaderboard-table th{
     background-color: black;
+    color: white;
+    border: 5px solid #333;
+    font-size: 25px;
 }
+.leaderboard-table{
+    border: 10px solid #333;
+}
+.leaderboard-table td{
+    background-color: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border: 5px solid #333;
+    
+
+}
+.leaderboard-title{
+    color:#ff6a00;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px;
+}
+
+.leaderboard-container{
+    margin-top: 50px;
+}
+@media screen and (max-width: 620px) {
+    .leaderboard-title{
+        color:#ff6a00;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 50px;
+    
+    }
+  }

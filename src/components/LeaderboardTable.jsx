@@ -8,14 +8,15 @@ const LeaderboardTable = () => {
     const { sortedLeaderboard, sortLeaderboard } = useLeaderboard();
 
     return (
-        <div>
-            <h1>Leaderboard</h1>
+        <div className="leaderboard-container">
+            <h1 className="leaderboard-title">Leaderboard</h1>
+            <br />
             <Table striped bordered hover className="leaderboard-table">
                 <thead>
                     <tr>
-                        <th className="white-text-black-bg">Rank</th>
-                        <th className="white-text-black-bg">Name</th>
-                        <th className="white-text-black-bg">Moves</th>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Moves</th>
                     </tr>
                 </thead>
                 <tbody>
