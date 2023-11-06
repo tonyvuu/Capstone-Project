@@ -40,8 +40,8 @@ const Step1 = () => {
       <br/>
       {showForm && (
         <AnswerComponent
-          placeholder="Which twin is deceased?"
-          correctAnswer="makenna"
+          placeholder='Are you ready to tackle on the investigation? (type "yes" to continue)'
+          correctAnswer="yes"
           onCorrectAnswer={() => {
             setIsCorrect(true);
             updateProgress(10);
