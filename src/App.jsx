@@ -31,17 +31,9 @@ function App() {
 
   return (
     <AuthProvider>
-<<<<<<< HEAD
-      <LeaderboardContext.Provider
-        value={{ leaderboardData, setLeaderboardData }}
-      >
+      <LeaderboardProvider>
         <CompletionBarContext.Provider value={{ progress, updateProgress, setProgress }}>
           <MoveCountContext.Provider value={{ moveCount, updateMoveCount, setMoveCount }}>
-=======
-      <LeaderboardProvider>
-        <CompletionBarContext.Provider value={{ progress, updateProgress }}>
-          <MoveCountContext.Provider value={{ moveCount, updateMoveCount }}>
->>>>>>> main
             <div>
               <HeaderNavBar />
               <Outlet />
