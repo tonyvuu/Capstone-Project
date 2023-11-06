@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Table from "react-bootstrap/Table";
 import { LeaderboardContext } from "../App";
 import { useAuth } from "../components/AuthContext";
+import '../styles/Leaderboard.css'
 
 const Leaderboard = () => {
   const { leaderboardData } = useContext(LeaderboardContext);
@@ -10,7 +11,7 @@ const Leaderboard = () => {
     (a, b) => a.moveCount - b.moveCount
   );
 
-  const {userData} = useAuth()
+  const { userData } = useAuth();
 
   const grabSession = async () => {
     try {
@@ -20,8 +21,9 @@ const Leaderboard = () => {
       console.error("Logout error:", error);
     }
   };
+
   const grabUser = () => {
-    console.log(userData)
+    console.log(userData);
   };
 
   return (
@@ -29,7 +31,9 @@ const Leaderboard = () => {
       <button onClick={grabSession}>session ?</button>
       <button onClick={grabUser}>User ?</button>
       Leaderboard
-      <Table striped bordered hover>
+      <br />
+      <br />
+      <Table striped bordered hover className="leaderboard-table">
         <thead>
           <tr>
             <th>Rank</th>
