@@ -4,6 +4,7 @@ import '../styles/Step1.css';
 import { TypeAnimation } from 'react-type-animation';
 import { CompletionBarContext } from '../App';
 import AnswerComponent from './AnswerComponent';
+import CompletionScreen from './CompletionScreen';
 
 const Step4 = () => {
   const [isCorrect, setIsCorrect] = useState(false);
@@ -46,7 +47,7 @@ const Step4 = () => {
           onCorrectAnswer={handleCorrectAnswer}
         />
       )}
-
+      {/* {isCorrect && <CompletionScreen />} */}
       {isCorrect && <Step5 />}
     </div>
   );

@@ -48,8 +48,8 @@ const Step3 = () => {
         />
       )}
 
-      {isCorrect && <CompletionScreen />}
-      {/* {isCorrect && <Step4 />} */}
+      {/* {isCorrect && <CompletionScreen />} */}
+      {isCorrect && <Step4 />}
     </div>
   );
 };
