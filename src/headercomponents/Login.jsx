@@ -89,7 +89,7 @@ const Login = () => {
           </Button>
         </Form>
         <br />
-        <p className="forgot-password">Forgot your password?</p>
+        {/* <p className="forgot-password">Forgot your password?</p> */}
       </div>
     </div>
   );
