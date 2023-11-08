@@ -27,7 +27,7 @@ const Login = () => {
     console.log(loginInfo);
 
     try {
-      const response = await fetch("https://capstone-project-server-sage.vercel.app", {
+      const response = await fetch("https://capstone-project-server-sage.vercel.app/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

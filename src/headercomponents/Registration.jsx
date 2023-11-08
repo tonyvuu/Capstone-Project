@@ -85,7 +85,7 @@ const Registration = () => {
         setPasswordError("");
       }, 2500);
     } else {
-      const response = await fetch("https://capstone-project-server-sage.vercel.app", {
+      const response = await fetch("https://capstone-project-server-sage.vercel.app/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
