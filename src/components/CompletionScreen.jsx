@@ -50,7 +50,7 @@ const CompletionScreen = () => {
     //   score: moveCount
     // })
 
-    const response = await fetch("https://capstone-project-server-sage.vercel.app", {
+    const response = await fetch("https://capstone-project-server-sage.vercel.app/addScore", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,27 +20,11 @@ const LeaderboardProvider = ({ children }) => {
   }, []);
 
   const sortLeaderboard = async () => {
-    const response = await fetch("https://capstone-project-server-sage.vercel.app");
+    const response = await fetch("https://capstone-project-server-sage.vercel.app/getHighScores");
     const data = await response.json();
     setLeaderboardData(data);
     console.log(data);
   };
-
-  const { userData } = useAuth();
-
-  // const grabSession = async () => {
-  //   try {
-  //     await fetch("http://localhost:3000/some-route");
-  //     console.log('session is active');
-  //   } catch (error) {
-  //     console.error("Logout error:", error);
-  //   }
-  // };
-  // const grabUser = () => {
-  //   console.log(userData)
-  // };
-
-  const grabData = () => {};
 
   return (
     <LeaderboardContext.Provider

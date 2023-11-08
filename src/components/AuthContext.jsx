@@ -21,7 +21,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await fetch("https://capstone-project-server-sage.vercel.app");
+      await fetch("https://capstone-project-server-sage.vercel.app/logout");
       console.log("Logout Successful");
       setIsAuthenticated(false);
       setUserData(null);
