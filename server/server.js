@@ -7,7 +7,11 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://mystery-case-game.vercel.app",
+  })
+);
 const session = require("express-session");
 
 app.use(
