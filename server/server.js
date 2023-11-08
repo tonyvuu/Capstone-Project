@@ -1,5 +1,6 @@
 const port = 3000;
 const express = require("express");
+const session = require("express-session");
 const pg = require("pg");
 const sequelize = require("sequelize");
 const cors = require("cors");
@@ -12,7 +13,6 @@ app.use(
     origin: "https://mystery-case-game.vercel.app",
   })
 );
-const session = require("express-session");
 
 app.use(
   session({
