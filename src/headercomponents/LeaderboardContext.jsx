@@ -20,7 +20,7 @@ const LeaderboardProvider = ({ children }) => {
   }, []);
 
   const sortLeaderboard = async () => {
-    const response = await fetch("http://localhost:3000/getHighScores");
+    const response = await fetch("https://capstone-project-server-sage.vercel.app");
     const data = await response.json();
     setLeaderboardData(data);
     console.log(data);
