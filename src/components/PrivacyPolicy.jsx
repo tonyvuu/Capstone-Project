@@ -5,7 +5,7 @@ import '../styles/PrivacyPolicy.css'
 function PrivacyPolicy() {
   return (
     <div className="privacy-policy">
-      <h1>Privacy Policy for Devtown Murder Mystery</h1>
+      <h1>Privacy Policy for Devtown Case Files</h1>
 
       <h2>1. Introduction</h2>
       <p>
