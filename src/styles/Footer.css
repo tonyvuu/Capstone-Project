@@ -1,0 +1,34 @@
+#footer {
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.developer-info {
+    margin: 0 2vw;
+    
+}
+
+.footer-icons-group {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-icons {
+    margin: 0 5%;
+}
+
+#footer a {
+    color: white !important;
+    opacity: 20%;
+}
+
+#footer a:hover {
+    color: #ff6a00 !important;
+    opacity: 100%;
+}
+
+#footer a:active {
+    color: red !important;
+}

@@ -14,6 +14,7 @@ import GameOver from "./components/GameOver";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
 import Timer from './components/Timer'
+import Footer from "./headercomponents/Footer";
 
 export const CompletionBarContext = createContext();
 export const MoveCountContext = createContext();
@@ -48,6 +49,7 @@ function App() {
                 <Route path="/termsofservice" element={<TermsOfService />} />
 
               </Routes>
+              <Footer />
             </div>
           </MoveCountContext.Provider>
         </CompletionBarContext.Provider>
